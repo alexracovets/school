@@ -1,3 +1,6 @@
+"use client"
+
+import Link from "next/link"
 
 export const HeaderNavigation = () => {
 
@@ -30,9 +33,9 @@ export const HeaderNavigation = () => {
                 {links.map((item, idx) => {
                     return (
                         <li key={idx}>
-                            <a href={item.path}>
+                            <Link href={item.path}>
                                 {item.name}
-                            </a>
+                            </Link>
                         </li>
                     )
                 })

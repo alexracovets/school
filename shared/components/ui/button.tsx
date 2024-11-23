@@ -5,12 +5,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib";
 
 const buttonVariants = cva(
-  "uppercase font-kyiv_titling px-[3.862rem] py-[1.5rem]",
+  "uppercase w-max font-kyiv_titling rounded-[2.319rem]",
   {
     variants: {
       variant: {
-        default: "text-[1.618rem] bg-regal-blue rounded-[2.319rem]",
-        outline: "",
+        default: "text-[1.671rem] bg-regal-blue px-[2.047rem] py-[2.85rem]",
+        header: "text-[1.618rem] bg-regal-blue px-[3.862rem] py-[1.5rem]",
         secondary: "",
         ghost: "",
         link: "",

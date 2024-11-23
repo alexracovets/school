@@ -10,9 +10,11 @@ export const Header = () => {
             )}>
                 <Logo />
                 <HeaderNavigation />
-                <Button className={cn(
-                    "max-w-[29.423rem] text-left"
-                )}>
+                <Button
+                    variant="header"
+                    className={cn(
+                        "max-w-[29.423rem] text-left"
+                    )}>
                     Записатись на безкоштовне заняття
                 </Button>
             </Container>

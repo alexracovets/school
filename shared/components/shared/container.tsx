@@ -1,13 +1,8 @@
+
+import { ChildrenType } from "@/shared/types";
 import { cn } from "@/shared/lib";
 
-import { ReactNode } from "react";
-
-type Props = {
-    children: ReactNode;
-    className?: string;
-}
-
-export const Container = ({ children, className }: Props) => {
+export const Container = ({ children, className }: ChildrenType) => {
     return (
         <div className={cn(
             "w-full relative",

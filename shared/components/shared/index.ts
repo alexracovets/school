@@ -1,4 +1,4 @@
-export { Container } from './container';
 export { HeaderNavigation } from './headerNavigation';
-export { Header } from './header';
+export { Container } from './container';
+export { Title } from './title';
 export { Logo } from './logo';

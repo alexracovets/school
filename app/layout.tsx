@@ -1,7 +1,17 @@
-import type { Metadata } from "next";
+import { Sawarabi_Gothic } from 'next/font/google';
 import localFont from "next/font/local";
+import type { Metadata } from "next";
+
 
 import { Header } from "@/shared/components";
+
+const sawarabi = Sawarabi_Gothic({
+  weight: "400",
+  variable: '--font-sawarabi',
+  style: ['normal'],
+  subsets: ['cyrillic'],
+  display: 'swap',
+})
 
 const kyivTypeSans = localFont({
   src: [
@@ -41,7 +51,8 @@ const kyivTypeSans = localFont({
       style: "normal"
     }
   ],
-  variable: "--font-kyiv-type-sans"
+  variable: "--font-kyiv-type-sans",
+  display: "swap"
 })
 
 const kyivTypeTitling = localFont({
@@ -65,7 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body
-        className={`${kyivTypeSans.variable} ${kyivTypeTitling.variable} antialiased`}
+        className={`${kyivTypeSans.variable} ${kyivTypeTitling.variable} ${sawarabi.variable} antialiased`}
       >
         <Header />
         {children}

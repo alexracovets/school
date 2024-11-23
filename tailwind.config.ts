@@ -12,7 +12,8 @@ const config: Config = {
 		extend: {
 			fontFamily: {
 				kyiv_sans: ["var(--font-kyiv-type-sans)"],
-				kyiv_titling: ["var(--font-kyiv-type-titling)"]
+				kyiv_titling: ["var(--font-kyiv-type-titling)"],
+				sawarabi: ["var(--font-sawarabi)"]
 			},
 			colors: {
 				'regal-blue': '#CFE6F6',
