@@ -2,16 +2,48 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Header } from "@/shared/components";
+
+const kyivTypeSans = localFont({
+  src: [
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Thin.woff",
+      weight: "100",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Light.woff",
+      weight: "300",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Regular.woff",
+      weight: "400",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Medium.woff",
+      weight: "500",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Bold.woff",
+      weight: "700",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Black.woff",
+      weight: "800",
+      style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeSans/KyivTypeSans-Heavy.woff",
+      weight: "900",
+      style: "normal"
+    }
+  ],
+  variable: "--font-kyiv-type-sans"
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${kyivTypeSans.variable} antialiased`}
+      >
+        <Header />
         {children}
       </body>
     </html>
