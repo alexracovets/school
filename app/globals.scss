@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.2;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(100vw / 1440 * 10);
+
+  @media (max-width:1023px) {
+    font-size: auto;
+  }
+}
