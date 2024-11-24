@@ -74,12 +74,14 @@ export const metadata: Metadata = {
 import "./globals.scss";
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
+    <html lang="uk">
       <body
         className={`${kyivTypeSans.variable} ${kyivTypeTitling.variable} ${sawarabi.variable} antialiased`}
       >
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

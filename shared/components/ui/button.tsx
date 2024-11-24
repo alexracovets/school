@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: "text-[1.671rem] bg-regal-blue px-[2.047rem] py-[2.85rem]",
         header: "text-[1.618rem] bg-regal-blue px-[3.862rem] py-[1.5rem]",
+        outline: "",
         secondary: "",
         ghost: "",
         link: "",

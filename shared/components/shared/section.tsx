@@ -1,16 +1,15 @@
 import { ChildrenType } from "@/shared/types";
 import { cn } from "@/shared/lib";
 
-export const Title = ({ children, className }: ChildrenType) => {
-
+export const Section = ({ children, id, className }: ChildrenType) => {
     return (
-        <h2
+        <section id={id}
             className={cn(
-                "text-[6.6rem] text-center font-kyiv_titling mb-[10rem]",
+                "py-[4rem]",
                 className
             )}
         >
             {children}
-        </h2>
+        </section>
     )
 }

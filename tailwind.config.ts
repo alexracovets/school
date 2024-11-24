@@ -16,7 +16,9 @@ const config: Config = {
 				sawarabi: ["var(--font-sawarabi)"]
 			},
 			colors: {
+				'regal-black': '#000000',
 				'regal-blue': '#CFE6F6',
+				'regal-light-blue': '#E5F1FA', 
 			},
 		}
 	},

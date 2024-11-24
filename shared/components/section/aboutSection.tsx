@@ -1,13 +1,18 @@
-import { Container, Title } from "@/shared/components";
+import { AboutSlider, Container, Title, Separator, Section } from "@/shared/components";
 
 export const AboutSection = () => {
     return (
-        <section>
+        <Section>
             <Container>
                 <Title>
-                        
+                    Хто ми?
                 </Title>
+            </Container >
+            <Separator />
+            <Container>
+                <AboutSlider />
             </Container>
-        </section>
+            <Separator />
+        </Section>
     )
 }

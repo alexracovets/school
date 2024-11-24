@@ -1,12 +1,12 @@
 import { cn } from "@/shared/lib";
 import Image from "next/image";
 
-import { Button } from "@/shared/components";
+import { Button, Section } from "@/shared/components";
 import { ExclamationMark } from "../shared/exclamationMark";
 
 export const StartSection = () => {
     return (
-        <section
+        <Section
             id="start"
             className="w-full flex justify-between"
         >
@@ -43,6 +43,6 @@ export const StartSection = () => {
                     Записатись на безкоштовне заняття
                 </Button>
             </div>
-        </section>
+        </Section>
     )
 }
