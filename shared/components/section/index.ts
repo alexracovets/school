@@ -1,3 +1,4 @@
+export { TutorsSection } from './tutorsSection';
 export { VectorSection } from './vectorSection';
 export { StartSection } from './startSection';
 export { AboutSection } from './aboutSection';

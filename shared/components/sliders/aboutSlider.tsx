@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Separator, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/shared/components";
 import { cn } from "@/shared/lib";

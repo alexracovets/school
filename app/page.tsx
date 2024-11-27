@@ -1,4 +1,4 @@
-import { AboutSection, StartSection, VectorSection } from "@/shared/components";
+import { AboutSection, StartSection, VectorSection, TutorsSection } from "@/shared/components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <StartSection />
       <AboutSection />
       <VectorSection />
+      <TutorsSection />
     </>
   );
 }

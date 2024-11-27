@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/shared/lib";
 import Image from "next/image";
 

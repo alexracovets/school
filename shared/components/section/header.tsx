@@ -1,3 +1,4 @@
+"use client";
 
 import { Button, Container, HeaderNavigation, Logo } from "@/shared/components";
 import { cn } from "@/shared/lib";

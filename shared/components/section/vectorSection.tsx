@@ -1,3 +1,5 @@
+"use client";
+
 import { Container, Title, Section, Vectors, Button } from "@/shared/components";
 
 export const VectorSection = () => {

@@ -1,3 +1,5 @@
+"use client";
+
 import { AboutSlider, Container, Title, Separator, Section } from "@/shared/components";
 
 export const AboutSection = () => {

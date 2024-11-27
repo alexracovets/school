@@ -1,3 +1,5 @@
+"use client";
+
 export const ExclamationMark = () => {
     return (
         <div className="mx-[1.5rem]">
