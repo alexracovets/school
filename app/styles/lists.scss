@@ -1,0 +1,42 @@
+.vector_list {
+    li {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: calc(2.674rem / 2);
+            width: .6rem;
+            height: .6rem;
+            border-radius: 50%;
+        }
+
+        &::before {
+            background-color: $base-color;
+            z-index: 1;
+        }
+
+        &::after {
+            background-color: $base-purple;
+            transform: translateY(100%);
+            filter: blur(.4rem);
+            z-index: 0;
+        }
+
+        p {
+            position: relative;
+
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+                left: 0;
+                top: 0.6rem;
+                color: $base-purple;
+                z-index: -1;
+                filter: blur(.5rem); 
+            }
+        }
+    }
+}

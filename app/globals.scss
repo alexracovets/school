@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'styles/variables.scss';
+@import 'styles/lists.scss';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
   line-height: 1.2;
+  color: $base-color;
 }
 
 html {
