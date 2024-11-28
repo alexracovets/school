@@ -22,7 +22,8 @@ const config: Config = {
 				'regal-dark-blue': "#235274",
 				'regal-dark-blue-second': "#1A6599",
 				'regal-light-blue': '#E5F1FA',
-				'regal-light-blue-second': '#46A4E8', 
+				'regal-light-blue-second': '#46A4E8',
+				'regal-light-blue-third': '#93D1FEA8',
 				'regal-gray': '#F3F7FB',
 				'regal-light-gray': "#00000040"
 			},
