@@ -61,6 +61,11 @@ const kyivTypeTitling = localFont({
       path: "./fonts/KyivTypeTitling/KyivTypeTitling-Regular.woff",
       weight: "400",
       style: "normal"
+    },
+    {
+      path: "./fonts/KyivTypeTitling/KyivTypeTitling-Bold.woff",
+      weight: "600",
+      style: "normal"
     }
   ],
   variable: "--font-kyiv-type-titling"

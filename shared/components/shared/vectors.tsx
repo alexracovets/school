@@ -80,7 +80,7 @@ export const Vectors = () => {
                                             data-title={item.title}
                                             className={cn(
                                                 "relative",
-                                                "before:content-[attr(data-title)] before:absolute before:left-0 before:top-[.4rem] before:text-center before:w-full before:text-regal-gray before:blur-[.4rem]"
+                                                "before:content-[attr(data-title)] before:absolute before:left-0 before:top-[.4rem] before:text-center before:w-full before:text-regal-light-gray before:blur-[.4rem]"
                                             )}
                                         >
                                             {item.title}

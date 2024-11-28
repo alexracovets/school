@@ -3,8 +3,7 @@
 import { cn } from "@/shared/lib";
 import Image from "next/image";
 
-import { Button, Section } from "@/shared/components";
-import { ExclamationMark } from "../shared/exclamationMark";
+import { Button, Section, ExclamationMark } from "@/shared/components";
 
 export const StartSection = () => {
     return (
@@ -16,7 +15,7 @@ export const StartSection = () => {
                 className={cn(
                     'relative w-full max-w-[85.2rem] min-w-[85.2rem] h-[52.9rem] rounded-[1.633rem] overflow-hidden'
                 )}>
-                <Image src="/start/books.jpg" alt="books" fill />
+                <Image src="/start/books.jpg" alt="books" priority fill />
             </div>
             <div
                 className={cn(

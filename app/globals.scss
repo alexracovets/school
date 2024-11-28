@@ -5,13 +5,19 @@
 @import 'styles/variables.scss';
 @import 'styles/lists.scss';
 
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke-width: 0.2rem;
+    -webkit-text-stroke-color: $regal-light-blue-second;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
   line-height: 1.2;
-  color: $base-color;
 }
 
 html {
