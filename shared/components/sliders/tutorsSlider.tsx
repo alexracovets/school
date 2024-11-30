@@ -1,7 +1,7 @@
 "use client";
 
 import { MdOutlineStar, MdOutlineStarHalf, MdOutlineStarOutline } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 
@@ -90,7 +90,6 @@ const renderStars = (stars: number) => {
                 />
             );
         } else if (stars > i - 1 && stars < i) {
-            // Якщо кількість зірок знаходиться між двома цілими числами, додаємо половину зірки
             starsArray.push(
                 <MdOutlineStarHalf
                     key={i}
@@ -99,7 +98,6 @@ const renderStars = (stars: number) => {
                 />
             );
         } else {
-            // Якщо позиція більше кількості зірок, додаємо пусту зірку
             starsArray.push(
                 <MdOutlineStarOutline
                     key={i}
@@ -113,10 +111,16 @@ const renderStars = (stars: number) => {
     return starsArray;
 };
 
-
 export const TutorsSlider = () => {
     const [api, setApi] = useState<CarouselApi>();
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
+
+    useEffect(() => {
+        setTimeout(() => {
+            api?.scrollTo(selectedIndex)
+        }, 300)
+
+    }, [selectedIndex])
 
     return (
         <>
@@ -131,7 +135,7 @@ export const TutorsSlider = () => {
                     />
                 ))}
             </div>
-            <Carousel setApi={setApi} opts={{ align: 'start' }}>
+            <Carousel setApi={setApi} opts={{ align: 'start', loop: true, dragFree: true }}>
                 <CarouselContent>
                     {
                         tutors.map((item, idx) => {

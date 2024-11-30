@@ -27,4 +27,21 @@ html {
   @media (max-width:1023px) {
     font-size: auto;
   }
+
+  body {
+    &::-webkit-scrollbar {
+      width: 2px;
+      position: absolute;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #FFFFFF;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $base-purple;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }
