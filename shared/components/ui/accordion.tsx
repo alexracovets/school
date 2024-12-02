@@ -41,6 +41,7 @@ const AccordionTrigger = React.forwardRef<
         <div className={cn(
           "relative h-[4.5rem] w-[4.5rem] shrink-0 transition-all duration-300 ease-in-out",
           "max-tablet:w-[2.579rem] max-tablet:h-[2.579rem]",
+          "max-mobile:w-[2.407rem] max-mobile:h-[2.407rem]",
           isOpen ? "rotate-[360deg]" : "rotate-0"
         )}>
           <TiMinus

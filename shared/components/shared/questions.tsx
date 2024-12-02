@@ -36,14 +36,16 @@ export const Questions = () => {
     return (
         <div className={cn(
             "flex flex-wrap gap-x-[3.2rem] gap-y-[6rem]",
-            "max-tablet:gap-x-[2.1rem] max-tablet:gap-y-[2.7rem]"
+            "max-tablet:gap-x-[2.1rem] max-tablet:gap-y-[2.7rem]",
+            "max-mobile:gap-x-0 max-mobile:gap-y-[3rem]"
         )}>
             {
                 questions.map((item, idx) => {
                     return (
                         <div key={idx} className={cn(
                             "w-full max-w-[calc(50%-1.6rem)]",
-                            "max-tablet:max-w-[calc(50%-1.05rem)]"
+                            "max-tablet:max-w-[calc(50%-1.05rem)]",
+                            "max-mobile:max-w-full"
                         )}>
                             <QuestionItem idx={idx} title={item.question} content={item.answer} />
                         </div>
