@@ -1,6 +1,7 @@
 "use client";
 
 import { Container, Title, Section, TutorsSlider, Button } from "@/shared/components";
+import { cn } from "@/shared/lib";
 import Image from "next/image";
 
 export const TutorsSection = () => {
@@ -16,9 +17,12 @@ export const TutorsSection = () => {
                 <div className="relative z-[1]">
                     <TutorsSlider />
                     <div
-                        className="w-full flex justify-center "
+                        className={cn(
+                            "w-full flex justify-center mt-[7.2rem] mb-[5rem]",
+                            "max-tablet:mb-[3rem] max-tablet:mt-[3.805rem]"
+                        )}
                     >
-                        <Button className="mt-[7.2rem] mb-[5rem]">
+                        <Button>
                             Записатись на безкоштовне заняття
                         </Button>
                     </div>
