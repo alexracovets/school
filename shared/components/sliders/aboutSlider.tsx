@@ -44,7 +44,7 @@ export const AboutSlider = () => {
                             return (
                                 <CarouselItem key={idx} className="basis-1/4">
                                     <div className={cn(
-                                        "w-[30.353rem] h-[45.5rem] bg-regal-light-blue rounded-[2.5rem] overflow-hidden px-[1.54rem] mx-auto",
+                                        "w-[30.353rem] h-[45.5rem] bg-regal-light-blue rounded-[2.5rem] overflow-hidden px-[1.54rem] mx-auto select-none",
                                         "max-tablet:w-[17.4rem] max-tablet:h-[26.01rem] max-tablet:px-[.86rem] max-tablet:rounded-[1.433rem]"
                                     )}>
                                         <div className={cn(
