@@ -146,10 +146,11 @@ export const TutorsSlider = () => {
                     {
                         tutors.map((item, idx) => {
                             return (
-                                <CarouselItem key={idx} className="basis-1/4">
+                                <CarouselItem key={idx} className="basis-1/4 max-mobile:basis-1/2">
                                     <div className={cn(
                                         "flex flex-col gap-y-[.9rem] items-center w-[30.6rem] h-[45.2rem] pt-[2.8rem] mx-auto bg-regal-white rounded-[1.6rem] border-[0.2rem] border-regal-dark-blue select-none",
-                                        "max-tablet:w-[17.53rem] max-tablet:h-[25.894rem] max-tablet:pt-[1.6rem] max-tablet:gap-y-[.5rem]"
+                                        "max-tablet:w-[17.53rem] max-tablet:h-[25.894rem] max-tablet:pt-[1.6rem] max-tablet:gap-y-[.5rem] max-tablet:border-[1px]",
+                                        "max-mobile:w-[16.4rem] max-mobile:h-[24.225rem]"
                                     )}>
                                         <div className={cn(
                                             "relative w-[20.729rem] h-[20.729rem] rounded-[50%] overflow-hidden",
