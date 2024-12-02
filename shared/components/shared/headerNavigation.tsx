@@ -28,7 +28,7 @@ export const HeaderNavigation = () => {
     ]
 
     return (
-        <nav>
+        <nav className="hidden">
             <ul className="flex text-[3.058rem] font-[400] font-kyiv_titling gap-[10rem]">
                 {links.map((item, idx) => {
                     return (

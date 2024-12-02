@@ -9,6 +9,7 @@ export const Title = ({ children, className }: ChildrenType) => {
         <h2
             className={cn(
                 "text-[6.6rem] text-center font-kyiv_titling mb-[10rem]",
+                "max-tablet:text-[3.8rem] max-tablet:mb-[6.5rem]",
                 className
             )}
         >

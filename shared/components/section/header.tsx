@@ -14,7 +14,8 @@ export const Header = () => {
                 <Button
                     variant="header"
                     className={cn(
-                        "max-w-[29.423rem] text-left"
+                        "max-w-[29.423rem] text-left",
+                        "max-tablet:max-w-[16.5rem]"
                     )}>
                     Записатись на безкоштовне заняття
                 </Button>

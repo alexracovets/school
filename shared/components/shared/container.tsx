@@ -8,6 +8,7 @@ export const Container = ({ children, className }: ChildrenType) => {
         <div className={cn(
             "w-full relative",
             'px-[6rem]',
+            'max-tablet:px-[4rem]',
             className
         )}>
             {children}

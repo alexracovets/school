@@ -8,6 +8,7 @@ export const Section = ({ children, id, className }: ChildrenType) => {
         <section id={id}
             className={cn(
                 "py-[4rem] overflow-hidden",
+                "max-tablet:py-[3rem]",
                 className
             )}
         >
