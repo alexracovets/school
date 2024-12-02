@@ -1,4 +1,4 @@
-import { AboutSection, StartSection, VectorSection, TutorsSection, PricesSection, QuestionsSection } from "@/shared/components";
+import { AboutSection, StartSection, VectorSection, TutorsSection, PricesSection, QuestionsSection, FeedbackSection } from "@/shared/components";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <TutorsSection />
       <PricesSection />
       <QuestionsSection />
+      <FeedbackSection />
     </>
   );
 }

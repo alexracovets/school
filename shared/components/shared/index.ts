@@ -3,6 +3,7 @@ export { ExclamationMark } from './exclamationMark';
 export { QuestionItem } from './questionItem';
 export { Container } from './container';
 export { Questions } from './questions';
+export { Feedback } from './feedback';
 export { Section } from './section';
 export { Vectors } from './vectors';
 export { Prices } from './prices';

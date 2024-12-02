@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 
 
-import { Header } from "@/shared/components";
+import { Footer, Header } from "@/shared/components";
 
 const sawarabi = Sawarabi_Gothic({
   weight: "400",
@@ -87,6 +87,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
