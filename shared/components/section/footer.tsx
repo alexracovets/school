@@ -9,7 +9,10 @@ import Link from "next/link";
 export const Footer = () => {
     return (
         <footer>
-            <Container className="py-[5rem]">
+            <Container className={cn(
+                "py-[5rem]",
+                "max-tablet:py-[3rem]"
+            )}>
                 <div
                     className="flex justify-between"
                 >
@@ -18,12 +21,18 @@ export const Footer = () => {
                         className="flex flex-col items-center"
                     >
                         <p
-                            className="text-[4.7rem] font-kyiv_titling mb-[1.3rem]"
+                            className={cn(
+                                "text-[4.7rem] font-kyiv_titling mb-[1.3rem]",
+                                "max-tablet:text-[2.7rem] max-tablet:mb-[.7rem]"
+                            )}
                         >
                             контакти
                         </p>
                         <p
-                            className="text-[4rem] font-sawarabi"
+                            className={cn(
+                                "text-[4rem] font-sawarabi",
+                                "max-tablet:text-[2rem]"
+                            )}
                         >
                             +380 68 039 44 75
                         </p>
@@ -33,11 +42,18 @@ export const Footer = () => {
                         className="flex flex-col items-center"
                     >
                         <p
-                            className="text-[4.7rem] font-kyiv_titling mb-[1.3rem]"
+                            className={cn(
+                                "text-[4.7rem] font-kyiv_titling mb-[1.3rem]",
+                                "max-tablet:text-[2.7rem] max-tablet:mb-[.7rem]"
+                            )}
                         >
                             ми в соц. мережах
                         </p>
-                        <FaInstagram className="w-[9.138rem] h-[9.138rem]" />
+                        <FaInstagram
+                            className={cn(
+                                "w-[9.138rem] h-[9.138rem]",
+                                "max-tablet:w-[5.825rem] max-tablet:h-[5.825rem]"
+                            )} />
                     </Link>
                 </div>
             </Container>
