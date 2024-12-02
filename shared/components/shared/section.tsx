@@ -7,7 +7,7 @@ export const Section = ({ children, id, className }: ChildrenType) => {
     return (
         <section id={id}
             className={cn(
-                "py-[4rem]",
+                "py-[4rem] overflow-hidden",
                 className
             )}
         >

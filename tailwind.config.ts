@@ -10,6 +10,10 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				tablet: '838px',
+				mobile: '376px'
+			},
 			fontFamily: {
 				kyiv_sans: ["var(--font-kyiv-type-sans)"],
 				kyiv_titling: ["var(--font-kyiv-type-titling)"],
