@@ -11,6 +11,12 @@
             width: .6rem;
             height: .6rem;
             border-radius: 50%;
+
+            @media (max-width: $tablet) {
+                width: .3rem;
+                height: .3rem;
+                top: calc(1.537rem / 2);
+            }
         }
 
         &::before {
@@ -23,6 +29,10 @@
             transform: translateY(100%);
             filter: blur(.4rem);
             z-index: 0;
+
+            @media (max-width: $tablet) {
+                filter: blur(.2rem);
+            }
         }
 
         p {
@@ -35,7 +45,12 @@
                 top: 0.6rem;
                 color: $base-purple;
                 z-index: -1;
-                filter: blur(.5rem); 
+                filter: blur(.5rem);
+
+                @media (max-width: $tablet) {
+                    top: 0.4rem;
+                    filter: blur(.2rem);
+                }
             }
         }
     }
