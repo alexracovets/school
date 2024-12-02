@@ -11,7 +11,7 @@ export const StartSection = () => {
             id="start"
             className={cn(
                 "w-full flex justify-between",
-                "flex-col"
+                "max-mobile:flex-col"
             )}
         >
             <div

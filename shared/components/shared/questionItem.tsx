@@ -36,7 +36,7 @@ export const QuestionItem = ({ idx, title, content }: QuestionItemType) => {
                         className={cn(
                             "text-[3rem] pl-[2rem] pr-[.5rem]",
                             "max-tablet:text-[1.7rem] max-tablet:px-[1rem]",
-                            "max-mobile:text-[1.586rem]"
+                            "max-mobile:text-[1.55rem]"
                         )}
                     >
                         {title}
