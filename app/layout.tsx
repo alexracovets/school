@@ -2,7 +2,7 @@ import { Sawarabi_Gothic } from 'next/font/google';
 import localFont from "next/font/local";
 import type { Metadata } from "next";
 
-
+import { CheckIsMobile } from '@/shared/tools/checkIsMobile';
 import { Footer, Header } from "@/shared/components";
 
 const sawarabi = Sawarabi_Gothic({
@@ -87,6 +87,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>
           {children}
         </main>
+        <CheckIsMobile />
         <Footer />
       </body>
     </html>

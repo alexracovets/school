@@ -59,6 +59,7 @@ export const DotButton: React.FC<DotButtonProps> = (props) => {
             className={cn(
                 "w-[1.7rem] h-[1.7rem] rounded-[50%] transition-all duration-300 ease-in-out",
                 "max-tablet:w-[1.2rem] max-tablet:h-[1.2rem]",
+                "max-mobile:w-[.9rem] max-mobile:h-[.9rem]",
                 selected ? "bg-[#AEAAAA] scale-[1.05]" : "bg-[#D9D9D9]"
             )}
         >

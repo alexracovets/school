@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 
-import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/shared/components";
-import { DotButton, useDotButton } from './slidersDot';
+import { Carousel, CarouselContent, CarouselItem, CarouselApi, DotButton, useDotButton } from "@/shared/components";
 import { cn } from "@/shared/lib";
 
 const tutors = [
@@ -124,7 +123,7 @@ export const TutorsSlider = () => {
             api?.scrollTo(selectedIndex)
         }, 300)
 
-    }, [selectedIndex])
+    }, [selectedIndex, api])
 
     return (
         <>
