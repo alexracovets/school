@@ -33,18 +33,25 @@ const feedBackData = [
 export const Feedback = () => {
     return (
         <div
-            className="flex flex-wrap gap-x-[3rem] gap-y-[7.5rem]"
+            className={cn(
+                "flex flex-wrap gap-x-[3rem] gap-y-[7.5rem]",
+                "max-tablet:gap-x-[1.6rem] max-tablet:gap-y-[4.369rem]"
+            )}
         >
             {
                 feedBackData.map((item, idx) => {
                     return (
                         <div
                             key={idx}
-                            className="p-[3.5rem] w-[calc(50%-1.5rem)] rounded-[5.4rem] border-[.35rem] border-regal-blue-second"
+                            className={cn(
+                                "w-[calc(50%-1.5rem)] p-[3.5rem] rounded-[5.4rem] border-[.35rem] border-regal-blue-second",
+                                "max-tablet:w-[calc(50%-.8rem)] max-tablet:p-[1.8rem] max-tablet:rounded-[3.1rem] max-tablet:border-[.2rem]"
+                            )}
                         >
                             <div
                                 className={cn(
-                                    "text-[3.3rem] pb-[3rem] text-center font-kyiv_titling"
+                                    "text-[3.3rem] pb-[3rem] text-center font-kyiv_titling",
+                                    "max-tablet:text-[1.872rem] max-tablet:pb-[1.7rem]"
                                 )}
                             >
                                 {item.title}
@@ -55,7 +62,10 @@ export const Feedback = () => {
                                         return (
                                             <p
                                                 key={index}
-                                                className="text-[2.4rem] font-sawarabi leading-[1.4721]"
+                                                className={cn(
+                                                    "text-[2.4rem] font-sawarabi leading-[1.4721]",
+                                                    "max-tablet:text-[1.37rem]"
+                                                )}
                                             >
                                                 {text}
                                             </p>
