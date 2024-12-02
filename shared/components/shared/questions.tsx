@@ -1,6 +1,7 @@
 "use client";
 
 import { QuestionItem } from "@/shared/components";
+import { cn } from "@/shared/lib";
 
 const questions = [
     {
@@ -33,11 +34,17 @@ const questions = [
 export const Questions = () => {
 
     return (
-        <div className="flex flex-wrap gap-x-[3.2rem] gap-y-[6rem]">
+        <div className={cn(
+            "flex flex-wrap gap-x-[3.2rem] gap-y-[6rem]",
+            "max-tablet:gap-x-[2.1rem] max-tablet:gap-y-[2.7rem]"
+        )}>
             {
                 questions.map((item, idx) => {
                     return (
-                        <div key={idx} className="w-full max-w-[calc(50%-1.6rem)]">
+                        <div key={idx} className={cn(
+                            "w-full max-w-[calc(50%-1.6rem)]",
+                            "max-tablet:max-w-[calc(50%-1.05rem)]"
+                        )}>
                             <QuestionItem idx={idx} title={item.question} content={item.answer} />
                         </div>
                     )

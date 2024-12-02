@@ -32,6 +32,7 @@ const AccordionTrigger = React.forwardRef<
         ref={ref}
         className={cn(
           "flex flex-1 items-center transition-all p-[2rem] rounded-[1.5rem] bg-regal-blue-opacity",
+          "max-tablet:rounded-[1rem] max-tablet:p-[1.146rem]",
           className
         )}
         {...props}
@@ -39,6 +40,7 @@ const AccordionTrigger = React.forwardRef<
         {children}
         <div className={cn(
           "relative h-[4.5rem] w-[4.5rem] shrink-0 transition-all duration-300 ease-in-out",
+          "max-tablet:w-[2.579rem] max-tablet:h-[2.579rem]",
           isOpen ? "rotate-[360deg]" : "rotate-0"
         )}>
           <TiMinus

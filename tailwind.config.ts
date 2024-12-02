@@ -52,7 +52,8 @@ const config: Config = {
 				}
 			},
 			boxShadow: {
-				'accordion': '0 0 1rem #0B7DD0, inset 0 0 2rem #0B7DD0'
+				'accordion': '0 0 1rem #0B7DD0, inset 0 0 2rem #0B7DD0',
+				'accordion-tablet': '0 0 .5rem #0B7DD0, inset 0 0 1.5rem #0B7DD0'
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
