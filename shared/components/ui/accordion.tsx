@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
+import { TiPlus, TiMinus } from "react-icons/ti";
 import * as React from "react";
 
 import { cn } from "@/shared/lib";
 
-const Accordion = AccordionPrimitive.Root
+const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
@@ -14,31 +14,50 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b", className)}
+    className={cn("", className)}
     {...props}
   />
 ))
-AccordionItem.displayName = "AccordionItem"
+AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+  & { isOpen: boolean }
+>(({ className, isOpen, children, ...props }, ref) => {
+
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={cn(
+          "flex flex-1 items-center transition-all p-[2rem] rounded-[1.5rem] bg-regal-blue-opacity",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <div className={cn(
+          "relative h-[4.5rem] w-[4.5rem] shrink-0 transition-all duration-300 ease-in-out",
+          isOpen ? "rotate-[360deg]" : "rotate-0"
+        )}>
+          <TiMinus
+            className={cn(
+              "absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-full transition-all duration-300 ease-in-out",
+              isOpen ? "opacity-1" : "opacity-0"
+            )}
+          />
+          <TiPlus className={cn(
+            "absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-full transition-all duration-300 ease-in-out",
+            isOpen ? "opacity-0" : "opacity-1"
+          )}
+          />
+        </div>
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  )
+})
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
@@ -53,6 +72,6 @@ const AccordionContent = React.forwardRef<
   </AccordionPrimitive.Content>
 ))
 
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

@@ -1,5 +1,6 @@
 export { HeaderNavigation } from './headerNavigation';
 export { ExclamationMark } from './exclamationMark';
+export { QuestionItem } from './questionItem';
 export { Container } from './container';
 export { Questions } from './questions';
 export { Section } from './section';

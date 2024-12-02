@@ -1,6 +1,6 @@
 "use client";
 
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/shared/components";
+import { QuestionItem } from "@/shared/components";
 
 const questions = [
     {
@@ -31,29 +31,15 @@ const questions = [
 ]
 
 export const Questions = () => {
+
     return (
-        <div>
+        <div className="flex flex-wrap gap-x-[3.2rem] gap-y-[6rem]">
             {
                 questions.map((item, idx) => {
                     return (
-                        <Accordion key={idx} type="single" collapsible>
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger>{item.question}</AccordionTrigger>
-                                <AccordionContent>
-                                    {
-                                        item.answer.map((text, index) => {
-                                            return (
-                                                <p
-                                                    key={index}
-                                                >
-                                                    {text}
-                                                </p>
-                                            )
-                                        })
-                                    }
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
+                        <div key={idx} className="w-full max-w-[calc(50%-1.6rem)]">
+                            <QuestionItem idx={idx} title={item.question} content={item.answer} />
+                        </div>
                     )
                 })
             }
