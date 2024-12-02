@@ -54,7 +54,7 @@ export const Vectors = () => {
         >
             <Separator
                 orientation="vertical"
-                className="absolute left-[50%] top-0 translate-x-[-50%]"
+                className="absolute left-[50%] top-0 translate-x-[-50%] max-mobile:hidden"
             />
             {
                 vectors.map((item, idx) => {
@@ -62,13 +62,15 @@ export const Vectors = () => {
                         <div
                             key={idx}
                             className={cn(
-                                "w-[50%]"
+                                "w-[50%]",
+                                "max-mobile:w-full max-mobile:px-[3rem]"
                             )}
                         >
                             <div
                                 className={cn(
                                     "w-[55.39rem] mx-auto",
-                                    "max-tablet:w-full max-tablet:pr-[1.537rem] max-tablet:pl-[6.575rem]"
+                                    "max-tablet:w-full max-tablet:pr-[1.537rem] max-tablet:pl-[6.575rem]",
+                                    "max-mobile:p-0"
                                 )}
                             >
                                 <div

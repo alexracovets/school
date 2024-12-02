@@ -13,12 +13,13 @@ export const VectorSection = () => {
                 <Vectors />
                 <div className={cn(
                     "flex justify-center w-full mt-[9.6rem]",
-                    "max-tablet:mt-[4.3rem]"
+                    "max-tablet:mt-[4.3rem]",
+                    "max-mobile:mt-[3.7rem]"
                 )}>
                     <Button>
                         Записатись на безкоштовне заняття
                     </Button>
-                </div> 
+                </div>
             </Container >
         </Section>
     )
