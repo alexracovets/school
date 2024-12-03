@@ -54,7 +54,6 @@ export const FormPopUp = () => {
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
                 <div className="relative flex flex-col justify-center items-center mx-auto bg-regal-blue px-[10rem] py-[3rem] rounded-[2rem] pointer-events-auto">
-
                     <IoMdClose
                         className="absolute right-[2rem] top-[2rem] w-[3.6rem] h-[3.6rem] cursor-pointer hover:scale-[1.2] hover:rotate-90 transition-all ease-in duration-300"
                         onClick={() => setIsOpen(false)}

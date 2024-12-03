@@ -46,7 +46,7 @@ export const HeaderNavigation = () => {
 
     return (
         <>
-            <Drawer open={isOpen} onOpenChange={setIsOpen}  >
+            <Drawer open={isOpen} onOpenChange={setIsOpen} direction='right'>
                 <DrawerContent>
                     <DrawerHeader className='hidden'>
                         <DrawerTitle></DrawerTitle>

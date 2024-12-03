@@ -11,8 +11,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			screens: {
-				tablet: '838px',
-				mobile: '376px'
+				tablet: '1030px',
+				mobile: '769px'
 			},
 			fontFamily: {
 				kyiv_titling: ["var(--font-kyiv-type-titling)"],
