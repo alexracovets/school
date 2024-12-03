@@ -42,7 +42,8 @@ export const HeaderNavigation = () => {
         if (!isMobile && !isTablet) {
             setIsOpen(false);
         }
-    }, [isMobile, isTablet, setIsOpen])
+    }, [isMobile, isTablet, setIsOpen]);
+
     return (
         <>
             <Drawer open={isOpen} onOpenChange={setIsOpen} direction='right'>
@@ -59,7 +60,7 @@ export const HeaderNavigation = () => {
                         )}>
                         <ul className={cn(
                             "flex flex-col min-w-[50vw] pt-[3rem]",
-                            "max-mobile:min-w-[100vw] max-mobile:w-full"
+                            "max-mobile:min-w-[100vw] max-mobile:w-full max-mobile:pt-[1rem]"
                         )}>
                             {links.map((item, idx) => {
                                 return (
