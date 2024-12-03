@@ -30,6 +30,7 @@ const config: Config = {
 				'regal-light-blue': '#E5F1FA',
 				'regal-light-blue-second': '#46A4E8',
 				'regal-light-blue-third': '#93D1FEA8',
+				'regal-light-blue-fourd': '#EDF8FF', 
 				'regal-gray': '#F3F7FB',
 				'regal-light-gray': '#00000040'
 			},

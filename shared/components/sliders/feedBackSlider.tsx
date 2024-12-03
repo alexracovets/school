@@ -1,15 +1,15 @@
 "use client";
- 
+
 import { useEffect, useState } from "react";
 
 import { Carousel, CarouselContent, CarouselApi, DotButton, useDotButton } from "@/shared/components";
 
-import useIsMobile from '@/store/useIsMobile';
+import useResponsive from '@/store/useResponsive';
 import { cn } from "@/shared/lib";
 
 export const FeedBackSlider = () => {
     const [api, setApi] = useState<CarouselApi>();
-    const isMobile = useIsMobile(state => state.isMobile);
+    const isMobile = useResponsive(state => state.isMobile);
     const [isSliderActive, setIsSliderActive] = useState(isMobile);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
 

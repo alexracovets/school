@@ -13,11 +13,13 @@ const buttonVariants = cva(
       variant: {
         default: cn(
           "text-[1.671rem] bg-regal-blue px-[2.047rem] py-[2.85rem] rounded-[2.319rem]",
-          "max-tablet:text-[1rem] max-tablet:px-[1.2rem] max-tablet:py-[1.65rem] max-tablet:rounded-[1.4rem]"
+          "max-tablet:text-[1rem] max-tablet:px-[1.2rem] max-tablet:py-[1.65rem] max-tablet:rounded-[1.4rem]",
+          "max-mobile:text-[.977rem] max-mobile:px-[1.2rem] max-mobile:py-[1.65rem]"
         ),
         header: cn(
           "text-[1.618rem] bg-regal-blue px-[3.862rem] py-[1.5rem] rounded-[2.319rem]",
-          "max-tablet:text-[1rem] max-tablet:px-[1.5rem] max-tablet:py-[1.15rem] max-tablet:rounded-[1.4rem]"
+          "max-tablet:text-[1rem] max-tablet:px-[1.5rem] max-tablet:py-[1.15rem] max-tablet:rounded-[1.4rem]",
+          "max-mobile:text-[.977rem] max-mobile:px-[1.35rem] max-mobile:py-[.8rem] max-mobile:text-center"
         ),
         outline: "",
         secondary: "",

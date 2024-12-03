@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Separator, Carousel, CarouselContent, CarouselItem, CarouselApi, DotButton, useDotButton } from "@/shared/components";
 
-import useIsMobile from '@/store/useIsMobile';
+import useResponsive from '@/store/useResponsive';
 import { cn } from "@/shared/lib";
 
 const slides = [
@@ -33,7 +33,7 @@ const slides = [
 
 export const AboutSlider = () => {
     const [api, setApi] = useState<CarouselApi>();
-    const isMobile = useIsMobile(state => state.isMobile);
+    const isMobile = useResponsive(state => state.isMobile);
     const [isSliderActive, setIsSliderActive] = useState(isMobile);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
 
