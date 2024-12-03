@@ -101,7 +101,13 @@ export const FormPopUp = () => {
                                     )
                                 })
                             }
-                            <Button className="mx-auto">ВІДПРАВИТИ</Button>
+                            <Button
+                                className="mx-auto mt-[2rem]"
+                                variant="secondary"
+                                disabled
+                            >
+                                ВІДПРАВИТИ
+                            </Button>
                         </form>
                     </div>
                 </div>

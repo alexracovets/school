@@ -33,7 +33,10 @@ const config: Config = {
 				'regal-radio': '#3A9EE4',
 				'regal-gray': '#F3F7FB',
 				'regal-light-gray': '#00000040',
-				'regal-btn-hover': '#C1E5FD'
+				'regal-btn-hover': '#C1E5FD',
+				'regal-btn-focus': '#9AD6FF',
+				'regal-btn-active': '#3A9EE4',
+				'regal-btn-disabled': '#D7E1E8',
 			},
 			keyframes: {
 				'accordion-down': {
