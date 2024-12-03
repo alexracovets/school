@@ -30,6 +30,8 @@ const buttonVariants = cva(
         outline: "",
         secondary: cn(
           "text-[2rem] px-[2.5rem] py-[2rem] uppercase bg-regal-white rounded-[1.5rem]",
+          "max-tablet:text-[2.5rem] max-tablet:px-[3rem]",
+          "max-mobile:text-[2rem] max-mobile:px-[1rem] max-mobile:py-[.8rem] max-mobile:rounded-[.7rem]",
           "hover:bg-regal-btn-focus",
           "active:bg-regal-btn-active",
           "disabled:bg-regal-btn-disabled"
