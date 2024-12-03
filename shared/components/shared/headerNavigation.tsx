@@ -12,6 +12,7 @@ export const HeaderNavigation = () => {
     const setIsOpen = useNavMenu(state => state.setIsOpen);
     const headerHeight = useNavMenu(state => state.headerHeight);
     const isTablet = useResponsive(state => state.isTablet);
+    const isMobile = useResponsive(state => state.isMobile);
 
     const links = [
         {
@@ -37,7 +38,7 @@ export const HeaderNavigation = () => {
     ]
     return (
         <>
-            {isTablet ?
+            {isTablet || isMobile ?
                 <Drawer open={isOpen} onOpenChange={setIsOpen} direction='right'>
                     <DrawerContent>
                         <DrawerHeader className='hidden'>
