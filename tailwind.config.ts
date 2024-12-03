@@ -32,7 +32,8 @@ const config: Config = {
 				'regal-light-blue-fourd': '#EDF8FF',
 				'regal-radio': '#3A9EE4',
 				'regal-gray': '#F3F7FB',
-				'regal-light-gray': '#00000040'
+				'regal-light-gray': '#00000040',
+				'regal-btn-hover': '#C1E5FD'
 			},
 			keyframes: {
 				'accordion-down': {
