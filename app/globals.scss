@@ -32,7 +32,8 @@ html {
     font-size: calc(100vw / 375 * 10);
   }
 
-  body {
+  body,
+  textarea {
     &::-webkit-scrollbar {
       width: 3px;
       position: absolute;
@@ -47,6 +48,10 @@ html {
       border: none;
       cursor: pointer;
     }
+  }
+
+  label {
+    cursor: pointer;
   }
 }
 

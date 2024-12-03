@@ -1,10 +1,14 @@
 "use client";
 
-import { Container, Title, Section, TutorsSlider, Button } from "@/shared/components";
-import { cn } from "@/shared/lib";
 import Image from "next/image";
 
+import { Container, Title, Section, TutorsSlider, Button } from "@/shared/components";
+import useFormState from '@/store/useFormState';
+import { cn } from "@/shared/lib";
+
 export const TutorsSection = () => {
+    const setActiveForm = useFormState(state => state.setIsActive);
+
     return (
         <Section>
             <Container>
@@ -26,7 +30,7 @@ export const TutorsSection = () => {
                             "max-mobile:mt-[2.881rem] max-mobile:mb-[3.7rem]"
                         )}
                     >
-                        <Button>
+                        <Button onClick={() => setActiveForm(true)}>
                             Записатись на безкоштовне заняття
                         </Button>
                     </div>

@@ -5,5 +5,6 @@ export { PricesSection } from './pricesSection';
 export { VectorSection } from './vectorSection';
 export { StartSection } from './startSection';
 export { AboutSection } from './aboutSection';
+export { FormPopUp } from './formPopUp';
 export { Header } from './header';
 export { Footer } from './footer';

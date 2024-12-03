@@ -1,6 +1,9 @@
 export { HeaderNavigation } from './headerNavigation';
 export { ExclamationMark } from './exclamationMark';
 export { QuestionItem } from './questionItem';
+export { TextAreaForm } from './textAreaForm';
+export { RadioForm } from './radioForm';
+export { InputForm } from './inputForm';
 export { Container } from './container';
 export { Questions } from './questions';
 export { Feedback } from './feedback';

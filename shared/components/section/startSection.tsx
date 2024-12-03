@@ -4,8 +4,11 @@ import { cn } from "@/shared/lib";
 import Image from "next/image";
 
 import { Button, Section, ExclamationMark } from "@/shared/components";
+import useFormState from '@/store/useFormState';
 
 export const StartSection = () => {
+    const setActiveForm = useFormState(state => state.setIsActive);
+
     return (
         <Section
             id="start"
@@ -54,7 +57,7 @@ export const StartSection = () => {
                 >
                     Отримайте якісну освіту з досвіченими викладачами в школі Aptly, не виходячи з дому. Підготовка до іспитів, покращення успішності та розвиток навичок у зручний для вас час.
                 </p>
-                <Button>
+                <Button onClick={() => setActiveForm(true)}>
                     Записатись на безкоштовне заняття
                 </Button>
             </div>

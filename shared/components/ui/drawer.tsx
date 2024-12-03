@@ -27,13 +27,16 @@ const DrawerClose = DrawerPrimitive.Close;
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay
-    ref={ref}
-    className={cn("fixed inset-0 z-0 bg-black/80", className)}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const { direction } = React.useContext(DrawerContext);
+  return (
+    <DrawerPrimitive.Overlay
+      ref={ref}
+      className={cn("fixed inset-0 z-0 bg-black/80", direction === "left" ? "z-[2]" : "", className)}
+      {...props}
+    />
+  )
+});
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const DrawerContent = React.forwardRef<
@@ -48,10 +51,11 @@ const DrawerContent = React.forwardRef<
       <DrawerPrimitive.Content
         ref={ref}
         className={cn(
-          "fixed z-1 flex h-auto flex-col bg-regal-white pointer-events-none",
+          "fixed z-1 flex h-auto flex-col pointer-events-none",
           (!direction || direction === "bottom") && "inset-x-0 bottom-0 mt-24 ",
           direction === "right" && "top-0 right-0 h-full",
           direction === "top" && "top-0 left-0 h-full",
+          direction === "left" && "top-0 left-0 h-full w-full z-[2]",
           className
         )}
         {...props}

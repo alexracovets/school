@@ -1,13 +1,14 @@
 "use client";
 
+import { useEffect, useRef, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import Headroom from 'react-headroom';
 
 import { Button, Container, HeaderNavigation, Logo } from "@/shared/components";
-import useNavMenu from '@/store/useNavMenu';
 import useResponsive from '@/store/useResponsive';
+import useFormState from '@/store/useFormState';
+import useNavMenu from '@/store/useNavMenu';
 import { cn } from "@/shared/lib";
-import { useEffect, useRef, useState } from 'react';
 
 export const Header = () => {
     const isOpen = useNavMenu(state => state.isOpen);
@@ -16,6 +17,7 @@ export const Header = () => {
     const headerRef = useRef<HTMLDivElement | null>(null);
     const isTablet = useResponsive(state => state.isTablet);
     const isMobile = useResponsive(state => state.isMobile);
+    const setActiveForm = useFormState(state => state.setIsActive);
 
     const [burgerSize, setBurgerSize] = useState(0);
 
@@ -56,7 +58,6 @@ export const Header = () => {
                 )}>
                     <Logo />
                     <HeaderNavigation />
-
                     <div
                         className={cn(
                             "flex justify-center items-center gap-x-[4rem]",
@@ -69,7 +70,9 @@ export const Header = () => {
                                 "max-w-[29.423rem] text-left",
                                 "max-tablet:max-w-[16.5rem]",
                                 "max-mobile:max-w-[15.8rem]"
-                            )}>
+                            )}
+                            onClick={() => setActiveForm(true)}
+                        >
                             Записатись на безкоштовне заняття
                         </Button>
                         <div className={cn(

@@ -46,7 +46,7 @@ export const HeaderNavigation = () => {
 
     return (
         <>
-            <Drawer open={isOpen} onOpenChange={setIsOpen} direction='right'>
+            <Drawer open={isOpen} onOpenChange={setIsOpen}  >
                 <DrawerContent>
                     <DrawerHeader className='hidden'>
                         <DrawerTitle></DrawerTitle>
@@ -55,12 +55,12 @@ export const HeaderNavigation = () => {
                     <nav
                         style={{ marginTop: headerHeight + "px" }}
                         className={cn(
-                            "pointer-events-auto h-full",
+                            "pointer-events-auto h-full bg-regal-white",
                             "max-mobile:w-full"
                         )}>
                         <ul className={cn(
-                            "flex flex-col min-w-[50vw] pt-[3rem]",
-                            "max-mobile:min-w-[100vw] max-mobile:w-full max-mobile:pt-[1rem]"
+                            "flex flex-col min-w-[50vw]",
+                            "max-mobile:min-w-[100vw] max-mobile:w-full"
                         )}>
                             {links.map((item, idx) => {
                                 return (

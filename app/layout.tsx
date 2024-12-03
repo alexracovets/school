@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 
 import { CheckIsMobile } from '@/shared/tools/checkIsMobile';
-import { Footer, Header } from "@/shared/components";
+import { Footer, FormPopUp, Header } from "@/shared/components";
 
 const sawarabi = Sawarabi_Gothic({
   weight: "400",
@@ -11,48 +11,6 @@ const sawarabi = Sawarabi_Gothic({
   style: ['normal'],
   subsets: ['cyrillic'],
   display: 'swap',
-})
-
-const kyivTypeSans = localFont({
-  src: [
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Thin.woff",
-      weight: "100",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Light.woff",
-      weight: "300",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Regular.woff",
-      weight: "400",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Medium.woff",
-      weight: "500",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Bold.woff",
-      weight: "700",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Black.woff",
-      weight: "800",
-      style: "normal"
-    },
-    {
-      path: "./fonts/KyivTypeSans/KyivTypeSans-Heavy.woff",
-      weight: "900",
-      style: "normal"
-    }
-  ],
-  variable: "--font-kyiv-type-sans",
-  display: "swap"
 })
 
 const kyivTypeTitling = localFont({
@@ -81,13 +39,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="uk">
       <body
-        className={`${kyivTypeSans.variable} ${kyivTypeTitling.variable} ${sawarabi.variable} antialiased`}
+        className={`${kyivTypeTitling.variable} ${sawarabi.variable} antialiased`}
       >
         <Header />
         <main className='relative z-[0]'>
           {children}
+          <FormPopUp />
+          <CheckIsMobile />
         </main>
-        <CheckIsMobile />
         <Footer />
       </body>
     </html>
