@@ -37,6 +37,8 @@ const config: Config = {
 				'regal-btn-focus': '#9AD6FF',
 				'regal-btn-active': '#3A9EE4',
 				'regal-btn-disabled': '#D7E1E8',
+				'regal-dot-blue': '#32CADE',
+				'regal-dot-red': '#F01F45'
 			},
 			keyframes: {
 				'accordion-down': {

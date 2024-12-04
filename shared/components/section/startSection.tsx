@@ -3,7 +3,7 @@
 import { cn } from "@/shared/lib";
 import Image from "next/image";
 
-import { Button, Section, ExclamationMark } from "@/shared/components";
+import { Button, Section, ExclamationMark, BlurDots } from "@/shared/components";
 import useFormState from '@/store/useFormState';
 
 export const StartSection = () => {
@@ -13,7 +13,7 @@ export const StartSection = () => {
         <Section
             id="start"
             className={cn(
-                "w-full flex justify-between",
+                "w-full flex justify-between overflow-hidden",
                 "max-mobile:flex-col"
             )}
         >
@@ -32,6 +32,7 @@ export const StartSection = () => {
                     "max-mobile:px-[1.6rem] max-mobile:items-center max-mobile:justify-center"
                 )}
             >
+                <BlurDots />
                 <div
                     className={cn(
                         "flex justify-between items-end mb-[4rem]",

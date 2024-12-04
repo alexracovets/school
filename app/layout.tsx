@@ -42,7 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${kyivTypeTitling.variable} ${sawarabi.variable} antialiased`}
       >
         <Header />
-        <main className='relative z-[0]'>
+        <main>
           {children}
           <FormPopUp />
           <CheckIsMobile />

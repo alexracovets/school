@@ -7,6 +7,7 @@ export { InputForm } from './inputForm';
 export { Container } from './container';
 export { Questions } from './questions';
 export { Feedback } from './feedback';
+export { BlurDots } from './blurDots';
 export { Section } from './section';
 export { Vectors } from './vectors';
 export { Prices } from './prices';

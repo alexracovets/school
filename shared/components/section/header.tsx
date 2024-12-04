@@ -18,7 +18,7 @@ export const Header = () => {
     const isTablet = useResponsive(state => state.isTablet);
     const isMobile = useResponsive(state => state.isMobile);
     const setActiveForm = useFormState(state => state.setIsActive);
-
+    const [isPin, setIsPin] = useState(false);
     const [burgerSize, setBurgerSize] = useState(0);
 
     useEffect(() => {
@@ -46,39 +46,51 @@ export const Header = () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [isTablet, isMobile, setHeaderHeight]);
-
+    console.log(isPin)
     return (
         <header
             ref={headerRef}
             className="relative z-[2]"
         >
-            <Headroom className=' '>
+            <Headroom
+                onPin={() => setIsPin(true)}
+                onUnpin={() => setIsPin(false)}
+                onUnfix={() => setIsPin(false)}
+            >
                 <Container className={cn(
-                    "relative flex justify-between items-center bg-regal-white"
-                )}>
-                    <Logo />
-                    <HeaderNavigation />
+                    "w-full transition ease-in duration-300",
+                    isPin ? "bg-regal-white" : "bg-transparent"
+                )}
+                >
                     <div
                         className={cn(
-                            "flex justify-center items-center gap-x-[4rem]",
-                            "max-mobile:gap-x-[3rem]"
+                            "flex justify-between items-center relative z-[50]"
                         )}
                     >
-                        <Button
-                            variant="header"
+                        <Logo />
+                        <HeaderNavigation />
+                        <div
                             className={cn(
-                                "max-w-[29.423rem] text-left",
-                                "max-tablet:max-w-[16.5rem]",
-                                "max-mobile:max-w-[15.8rem]"
+                                "flex justify-center items-center gap-x-[4rem]",
+                                "max-mobile:gap-x-[3rem]"
                             )}
-                            onClick={() => setActiveForm(true)}
                         >
-                            Записатись на безкоштовне заняття
-                        </Button>
-                        <div className={cn(
-                            'hidden max-tablet:block'
-                        )}>
-                            <Hamburger toggled={isOpen} toggle={setIsOpen} color="#171717" size={burgerSize} />
+                            <Button
+                                variant="header"
+                                className={cn(
+                                    "max-w-[29.423rem] text-left",
+                                    "max-tablet:max-w-[16.5rem]",
+                                    "max-mobile:max-w-[15.8rem]"
+                                )}
+                                onClick={() => setActiveForm(true)}
+                            >
+                                Записатись на безкоштовне заняття
+                            </Button>
+                            <div className={cn(
+                                'hidden max-tablet:block'
+                            )}>
+                                <Hamburger toggled={isOpen} toggle={setIsOpen} color="#171717" size={burgerSize} />
+                            </div>
                         </div>
                     </div>
                 </Container>

@@ -22,21 +22,21 @@ export const FormPopUp = () => {
     });
 
     const radioOptions: Array<RadioFormType> = [
-            {
-                title: "Як з вами зв`язатися?",
-                name: "useConnect",
-                values: [
-                    {
-                        name: "Телефон",
-                        label: "Зателефонуйте мені",
-                    },
-                    {
-                        name: "Telegram",
-                        label: "Напишіть в Telegram",
-                    },
-                ],
-            },
-        ];
+        {
+            title: "Як з вами зв`язатися?",
+            name: "useConnect",
+            values: [
+                {
+                    name: "Телефон",
+                    label: "Зателефонуйте мені",
+                },
+                {
+                    name: "Telegram",
+                    label: "Напишіть в Telegram",
+                },
+            ],
+        },
+    ];
 
     const submit: SubmitHandler<FormType> = data => {
         console.log(data)
@@ -59,7 +59,7 @@ export const FormPopUp = () => {
                         className={cn(
                             "absolute right-[2rem] top-[2rem] w-[3.6rem] h-[3.6rem] cursor-pointer hover:scale-[1.2] hover:rotate-90 transition-all ease-in duration-300",
                             "max-tablet:w-[4rem] max-tablet:h-[4rem] max-tablet:right-[2.5rem] max-tablet:top-[2.5rem]",
-                            "max-mobile:w-[3.6rem] max-mobile:h-[3.6rem] max-mobile:right-[1.5rem] max-mobile:h-[3.6rem]"
+                            "max-mobile:w-[3.6rem] max-mobile:h-[3.6rem] max-mobile:right-[1.5rem]"
                         )}
                         onClick={() => setIsOpen(false)}
                     />
@@ -118,7 +118,7 @@ export const FormPopUp = () => {
                             }
                             <Button
                                 className="mx-auto mt-[2rem]"
-                                variant="secondary" 
+                                variant="secondary"
                             >
                                 ВІДПРАВИТИ
                             </Button>
