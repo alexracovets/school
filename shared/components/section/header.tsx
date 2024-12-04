@@ -46,25 +46,26 @@ export const Header = () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [isTablet, isMobile, setHeaderHeight]);
-    console.log(isPin)
+
     return (
         <header
             ref={headerRef}
-            className="relative z-[2]"
+            className="relative z-[2] w-full"
         >
             <Headroom
                 onPin={() => setIsPin(true)}
                 onUnpin={() => setIsPin(false)}
-                onUnfix={() => setIsPin(false)}
+                onUnfix={() => setIsPin(false)} 
             >
                 <Container className={cn(
-                    "w-full transition ease-in duration-300",
-                    isPin ? "bg-regal-white" : "bg-transparent"
+                    "w-full transition ease-in max-w-full",
+                    isPin ? "bg-regal-white" : "bg-transparent",
+                    isOpen ? "bg-regal-white duration-0" : "duration-300"
                 )}
                 >
                     <div
                         className={cn(
-                            "flex justify-between items-center relative z-[50]"
+                            "flex justify-between items-center relative z-[50] w-full"
                         )}
                     >
                         <Logo />

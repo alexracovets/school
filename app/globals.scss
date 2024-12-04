@@ -36,6 +36,19 @@ html {
 
   body {
     overflow-x: hidden;
+
+
+    &[data-scroll-locked] {
+      margin-right: 0 !important;
+    }
+
+    main {
+      overflow: hidden;
+
+      @media (max-width: $tablet) {
+        position: relative;
+      }
+    }
   }
 
   body,
@@ -63,4 +76,9 @@ html {
 
 .pointer-events-none {
   pointer-events: none !important;
+}
+
+.headroom {
+  width: 100%;
+  max-width: 100vw;
 }

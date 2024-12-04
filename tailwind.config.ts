@@ -23,6 +23,7 @@ const config: Config = {
 				'regal-white': '#FFFFFF',
 				'regal-blue': '#CFE6F6',
 				'regal-blue-opacity': '#CFE6F68C',
+				'regal-blue-opacity-second': '#32CADE82',
 				'regal-blue-second': '#157FCA',
 				'regal-dark-blue': '#235274',
 				'regal-dark-blue-second': '#1A6599',
@@ -38,7 +39,8 @@ const config: Config = {
 				'regal-btn-active': '#3A9EE4',
 				'regal-btn-disabled': '#D7E1E8',
 				'regal-dot-blue': '#32CADE',
-				'regal-dot-red': '#F01F45'
+				'regal-dot-red': '#F01F45',
+				'regal-pink': '#EBCFEA'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -65,6 +67,9 @@ const config: Config = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			transitionDuration: {
+				'2000': '2000ms',
 			}
 		}
 	},

@@ -3,7 +3,7 @@
 import { cn } from "@/shared/lib";
 import Image from "next/image";
 
-import { Button, Section, ExclamationMark, BlurDots } from "@/shared/components";
+import { Button, Section, ExclamationMark, BlurDotsGroup } from "@/shared/components";
 import useFormState from '@/store/useFormState';
 
 export const StartSection = () => {
@@ -32,7 +32,7 @@ export const StartSection = () => {
                     "max-mobile:px-[1.6rem] max-mobile:items-center max-mobile:justify-center"
                 )}
             >
-                <BlurDots />
+                <BlurDotsGroup />
                 <div
                     className={cn(
                         "flex justify-between items-end mb-[4rem]",
@@ -45,7 +45,15 @@ export const StartSection = () => {
                             "text-[3.058rem] font-[400] font-kyiv_titling",
                             "max-tablet:text-[1.731rem]"
                         )}>
-                        Індивідуальні онлайн- заняття з топ-репетиторами для школярів та дорослих
+                        Індивідуальні <span
+                            className={cn(
+                                "relative",
+                                "before:content-[''] before:absolute before:z-[-1] before:left-0 before:bottom-[-.6rem] before:w-[13.72rem] before:h-[2.8rem] before:bg-regal-blue-opacity-second before:rounded-[50%]",
+                                "max-tablet:before:w-[4.493rem] max-tablet:before:h-[.917rem] max-tablet:before:left-[1.5rem] max-tablet:before:bottom-[-.4rem]"
+                            )}
+                        >
+                            онлайн-
+                        </span>  заняття з топ-репетиторами для школярів та дорослих
                     </p>
                     <ExclamationMark />
                 </div>
@@ -56,7 +64,13 @@ export const StartSection = () => {
                         "max-mobile:p-0 max-mobile:mb-[3rem]"
                     )}
                 >
-                    Отримайте якісну освіту з досвіченими викладачами в школі Aptly, не виходячи з дому. Підготовка до іспитів, покращення успішності та розвиток навичок у зручний для вас час.
+                    Отримайте якісну освіту з досвіченими викладачами в школі <span
+                        className={cn(
+                            "relative",
+                            "before:content-[''] before:absolute before:left-0 before:bottom-0 before:z-[-1] before:w-full before:h-[2.754rem] before:bg-regal-pink before:blur-[.7rem]",
+                            "max-tablet:before:h-[1.559rem] max-tablet:before:w-[4.676rem] max-tablet:before:left-[-.3rem]"
+                        )}
+                    >Aptly,</span> не виходячи з дому. Підготовка до іспитів, покращення успішності та розвиток навичок у зручний для вас час.
                 </p>
                 <Button onClick={() => setActiveForm(true)}>
                     Записатись на безкоштовне заняття
