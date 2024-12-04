@@ -65,6 +65,7 @@ const dots = [
 
 export const Prices = () => {
     const isMobile = useResponsive(state => state.isMobile);
+    const isTablet = useResponsive(state => state.isTablet);
 
     return (
         <div className={cn(
@@ -85,7 +86,7 @@ export const Prices = () => {
                         "max-mobile:text-[2.699rem]"
                     )}
                 >
-                    РЕПЕТИТОРИ
+                   {isTablet? "звичайні репетитори": "РЕПЕТИТОРИ"}
                 </h3>
                 <div className={cn(
                     "relative w-[2.1rem] h-[6.968rem] mt-[4rem] mb-[1.7rem]",
