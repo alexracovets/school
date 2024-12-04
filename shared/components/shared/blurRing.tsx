@@ -10,6 +10,27 @@ interface BlurDotType {
 }
 
 export const BlurRing = ({ position, blurRing, borderRing }: BlurDotType) => {
+    const [translateBorder, setTranslateBorder] = useState({ x: 0, y: 0 });
+    const [translateBlur, setTranslateBlur] = useState({ x: 0, y: 0 });
+
+    const getRandom = () => {
+        return Math.random() * 100 - 50;
+    }
+
+    const updatePositions = () => {
+        setTranslateBorder({ x: getRandom(), y: getRandom() });
+        setTranslateBlur({ x: getRandom(), y: getRandom() });
+    };
+
+    useEffect(() => {
+        updatePositions();
+
+        const interval = setInterval(() => {
+            updatePositions();
+        }, 10000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div
@@ -21,15 +42,21 @@ export const BlurRing = ({ position, blurRing, borderRing }: BlurDotType) => {
             <div className="relative">
                 <div
                     className={cn(
-                        "absolute border-[#2480C3] rounded-[50%]",
+                        "absolute border-[#2480C3] rounded-[50%] transition ease-linear duration-10000",
                         borderRing
                     )}
+                    style={{
+                        transform: `translate(${translateBorder.x}%, ${translateBorder.y}%)`
+                    }}
                 />
                 <div
                     className={cn(
-                        "absolute bg-[#93D1FE] rounded-[50%]",
+                        "absolute bg-[#93D1FE] rounded-[50%] transition ease-linear duration-10000",
                         blurRing
                     )}
+                    style={{
+                        transform: `translate(${translateBlur.x}%, ${translateBlur.y}%)`
+                    }}
                 />
 
             </div>

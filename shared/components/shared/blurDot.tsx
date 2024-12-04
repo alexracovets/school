@@ -13,15 +13,19 @@ interface BlurDotType {
 export const BlurDot = ({ position, size, blur, color }: BlurDotType) => {
     const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const randomX = Math.random() * 100 - 50;
-            const randomY = Math.random() * 100 - 50;
+    const getRandom = (shift: number) => {
+        return Math.random() * 100 - shift;
+    }
 
-            setTranslate({
-                x: randomX,
-                y: randomY
-            });
+    const updatePositions = () => {
+        setTranslate({ x: getRandom(70), y: getRandom(50) });
+    };
+
+    useEffect(() => {
+        updatePositions();
+
+        const interval = setInterval(() => {
+            updatePositions();
         }, 2000);
 
         return () => clearInterval(interval);

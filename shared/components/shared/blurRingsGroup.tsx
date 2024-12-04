@@ -10,7 +10,7 @@ export const BlurRingsGroup = () => {
             position: cn(
                 "top-[9.685rem] right-[1.5rem]",
                 "max-tablet:top-[2rem] max-tablet:right-[-4rem]",
-                "max-mobile:top-[35.5rem] max-tablet:right-[27.5rem]"
+                "max-mobile:top-[35.5rem] max-mobile:right-[27.5rem]"
             ),
             blurRing: cn(
                 "right-0 top-0 w-[21.069rem] h-[18.86rem] blur-[8rem]",

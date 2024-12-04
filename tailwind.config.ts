@@ -70,6 +70,7 @@ const config: Config = {
 			},
 			transitionDuration: {
 				'2000': '2000ms',
+				'10000': '10000ms'
 			}
 		}
 	},
