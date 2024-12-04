@@ -45,7 +45,7 @@ html {
     main {
       overflow: hidden;
 
-      @media (max-width: $tablet) {
+      @media (max-width: $mobile) {
         position: relative;
       }
     }
