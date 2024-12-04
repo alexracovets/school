@@ -5,47 +5,59 @@ import { useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/shared/components";
 import { QuestionItemType } from "@/shared/types";
 import { cn } from "@/shared/lib";
+import Link from "next/link";
 
 export const QuestionItem = ({ idx, title, content }: QuestionItemType) => {
     const [openItem, setOpenItem] = useState<string | null>(null);
+
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        if (openItem === `item-${idx}`) {
+            e.preventDefault();
+        }
+    };
 
     return (
         <Accordion
             type="single"
             collapsible
             onValueChange={(value) => setOpenItem(value)}
+            id={`question_${idx}`}
         >
             <AccordionItem value={`item-${idx}`}>
-                <AccordionTrigger
-                    isOpen={openItem === `item-${idx}`}
+                <Link href={`/#question_${idx}`} onClick={handleLinkClick}>
+                    <AccordionTrigger
+                        isOpen={openItem === `item-${idx}`}
+                        className={cn(
+                            "font-kyiv_titling shadow-accordion",
+                            "max-tablet:shadow-accordion-tablet"
+                        )}
+                    >
+                        <span
+                            className={cn(
+                                "text-[5.1rem]",
+                                "max-tablet:text-[2.908rem]",
+                                "max-mobile:text-[2.648rem]"
+                            )}
+                        >
+                            {idx + 1 + '.'}
+                        </span>
+                        <p
+                            className={cn(
+                                "text-[3rem] pl-[2rem] pr-[.5rem]",
+                                "max-tablet:text-[1.7rem] max-tablet:px-[1rem]",
+                                "max-mobile:text-[1.55rem]"
+                            )}
+                        >
+                            {title}
+                        </p>
+                    </AccordionTrigger>
+                </Link>
+                <AccordionContent 
                     className={cn(
-                        "font-kyiv_titling shadow-accordion",
-                        "max-tablet:shadow-accordion-tablet"
+                        "p-[1.5rem]",
+                        "max-tablet:p-[.5rem]",
                     )}
                 >
-                    <span
-                        className={cn(
-                            "text-[5.1rem]",
-                            "max-tablet:text-[2.908rem]",
-                            "max-mobile:text-[2.648rem]"
-                        )}
-                    >
-                        {idx + 1 + '.'}
-                    </span>
-                    <p
-                        className={cn(
-                            "text-[3rem] pl-[2rem] pr-[.5rem]",
-                            "max-tablet:text-[1.7rem] max-tablet:px-[1rem]",
-                            "max-mobile:text-[1.55rem]"
-                        )}
-                    >
-                        {title}
-                    </p>
-                </AccordionTrigger>
-                <AccordionContent className={cn(
-                    "p-[1.5rem]",
-                    "max-tablet:p-[.5rem]",
-                )}>
                     <div
                         className={cn(
                             "font-sawarabi px-[3rem] py-[1.95rem] rounded-[1.5rem] bg-regal-blue-opacity mt-[3.5rem] shadow-accordion",
