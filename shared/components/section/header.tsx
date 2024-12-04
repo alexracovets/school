@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import Headroom from 'react-headroom';
 
@@ -28,6 +28,12 @@ export const Header = () => {
     const [burgerSize, setBurgerSize] = useState(0);
     const headroomRef = useRef<HeadroomInstance | null>(null);
 
+    const headroomUnPin = useCallback(() => {
+        if (headroomRef.current) {
+            headroomRef.current?.unpin();
+        }
+    }, [headroomRef]);
+
     useEffect(() => {
         const handleResize = () => {
             if (headerRef.current) {
@@ -53,19 +59,21 @@ export const Header = () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [isTablet, isMobile, setHeaderHeight]);
+
     useEffect(() => {
         if (!headroomRef.current) return;
         if (isOpen) {
             headroomRef.current.pin();
         }
     }, [headroomRef, isOpen]);
+
     return (
         <header
             ref={headerRef}
             className="relative z-[2] w-full"
         >
             <Headroom
-                ref={headroomRef as unknown as React.LegacyRef<Headroom>}
+                ref={headroomRef as React.LegacyRef<Headroom>}
                 onPin={() => setIsPin(true)}
                 onUnpin={() => setIsPin(false)}
                 onUnfix={() => setIsPin(false)}
@@ -81,7 +89,7 @@ export const Header = () => {
                         )}
                     >
                         <Logo />
-                        <HeaderNavigation />
+                        <HeaderNavigation closeHeadroom={headroomUnPin} />
                         <div
                             className={cn(
                                 "flex justify-center items-center gap-x-[4rem]",

@@ -8,7 +8,11 @@ import useNavMenu from '@/store/useNavMenu';
 import { cn } from "@/shared/lib";
 import { useEffect } from "react";
 
-export const HeaderNavigation = () => {
+interface NavType {
+    closeHeadroom: () => void;
+}
+
+export const HeaderNavigation = ({ closeHeadroom }: NavType) => {
     const isOpen = useNavMenu(state => state.isOpen);
     const setIsOpen = useNavMenu(state => state.setIsOpen);
     const headerHeight = useNavMenu(state => state.headerHeight);
@@ -18,23 +22,19 @@ export const HeaderNavigation = () => {
     const links = [
         {
             name: 'Хто ми?',
-            path: "/",
-            to: "#start"
+            path: "/#about"
         },
         {
             name: 'Ціни',
-            path: "/",
-            to: "#start"
+            path: "/#price"
         },
         {
             name: 'Питання',
-            path: "/",
-            to: "#start"
+            path: "/#questions"
         },
         {
             name: 'Відгуки',
-            path: "/",
-            to: "#start"
+            path: "/#feed_back"
         }
     ]
 
@@ -67,6 +67,11 @@ export const HeaderNavigation = () => {
                                     <li key={idx} className="w-full">
                                         <Link
                                             href={item.path}
+                                            onClick={() => {
+                                                setTimeout(() => closeHeadroom(), 1000);
+                                                setIsOpen(false);
+                                            }}
+                                            passHref
                                             className={cn(
                                                 "flex text-[1.6rem] font-kyiv_titling leading-1 px-[1.6rem] py-[1.5rem] bg-regal-light-blue-fourd w-full"
                                             )}
@@ -87,7 +92,14 @@ export const HeaderNavigation = () => {
                     {links.map((item, idx) => {
                         return (
                             <li key={idx}>
-                                <Link href={item.path}>
+                                <Link
+                                    href={item.path}
+                                    passHref
+                                    onClick={() => {
+                                        closeHeadroom();
+                                        setIsOpen(false);
+                                    }}
+                                >
                                     {item.name}
                                 </Link>
                             </li>

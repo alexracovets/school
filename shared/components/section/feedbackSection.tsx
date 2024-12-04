@@ -4,7 +4,7 @@ import { Container, Feedback, Section, Title } from "@/shared/components";
 
 export const FeedbackSection = () => {
     return (
-        <Section>
+        <Section id="feed_back">
             <Container>
                 <Title>
                     Відгуки

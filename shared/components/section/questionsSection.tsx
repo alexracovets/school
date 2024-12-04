@@ -4,7 +4,7 @@ import { Container, Questions, Section, Title } from "@/shared/components";
 
 export const QuestionsSection = () => {
     return (
-        <Section>
+        <Section id="questions">
             <Container>
                 <Title>
                     Часті питання

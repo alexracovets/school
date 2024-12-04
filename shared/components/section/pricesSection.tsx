@@ -8,7 +8,7 @@ export const PricesSection = () => {
     const setActiveForm = useFormState(state => state.setIsActive);
 
     return (
-        <Section className="max-mobile:pt-[3.4rem] pb-0 max-tablet:pb-0 max-mobile:pb-0">
+        <Section id="price" className="max-mobile:pt-[3.4rem] pb-0 max-tablet:pb-0 max-mobile:pb-0">
             <Container>
                 <Title>
                     Ціни

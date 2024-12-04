@@ -4,7 +4,7 @@ import { AboutSlider, Container, Title, Separator, Section } from "@/shared/comp
 
 export const AboutSection = () => {
     return (
-        <Section>
+        <Section id="about">
             <Container>
                 <Title className="transition ease-in-out duration-300">
                     Хто ми?
