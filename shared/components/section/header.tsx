@@ -10,6 +10,12 @@ import useFormState from '@/store/useFormState';
 import useNavMenu from '@/store/useNavMenu';
 import { cn } from "@/shared/lib";
 
+type HeadroomInstance = {
+    pin: () => void;
+    unpin: () => void;
+    unfix: () => void;
+};
+
 export const Header = () => {
     const isOpen = useNavMenu(state => state.isOpen);
     const setIsOpen = useNavMenu(state => state.setIsOpen);
@@ -20,6 +26,7 @@ export const Header = () => {
     const setActiveForm = useFormState(state => state.setIsActive);
     const [isPin, setIsPin] = useState(false);
     const [burgerSize, setBurgerSize] = useState(0);
+    const headroomRef = useRef<HeadroomInstance | null>(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,16 +53,23 @@ export const Header = () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [isTablet, isMobile, setHeaderHeight]);
-
+    useEffect(() => {
+        if (!headroomRef.current) return;
+        if (isOpen) {
+            headroomRef.current.pin();
+        }
+        console.log(headroomRef.current);
+    }, [headroomRef, isOpen]);
     return (
         <header
             ref={headerRef}
             className="relative z-[2] w-full"
         >
             <Headroom
+                ref={headroomRef as unknown as React.LegacyRef<Headroom>}
                 onPin={() => setIsPin(true)}
                 onUnpin={() => setIsPin(false)}
-                onUnfix={() => setIsPin(false)} 
+                onUnfix={() => setIsPin(false)}
             >
                 <Container className={cn(
                     "w-full transition ease-in max-w-full",
