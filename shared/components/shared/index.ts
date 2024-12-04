@@ -4,6 +4,7 @@ export { BlurRingsGroup } from './blurRingsGroup';
 export { BlurDotsGroup } from './blurDotsGroup';
 export { QuestionItem } from './questionItem';
 export { TextAreaForm } from './textAreaForm';
+export { VectorsStar } from './vectorsStar';
 export { RadioForm } from './radioForm';
 export { InputForm } from './inputForm';
 export { Container } from './container';

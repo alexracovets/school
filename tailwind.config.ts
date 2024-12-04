@@ -65,13 +65,48 @@ const config: Config = {
 						transform: 'scale(.9) translateX(50%)'
 					},
 					'10%': {
-						opacity: '1', 
+						opacity: '1',
 					},
 					'100%': {
 						opacity: '0',
 						transform: 'scale(1.1) translateX(55%)'
 					},
 				},
+				beat: {
+					'0%': {
+						transform: 'scale(1)'
+					},
+					'14%': {
+						transform: 'scale(0.9)'
+					},
+					'21%': {
+						transform: 'scale(1.1) skew(0.004turn)'
+					},
+					'28%': {
+						transform: 'scale(1) skew(0.008turn)'
+					},
+					'35%': {
+						transform: 'scale(1) skew(0)'
+					}
+				},
+				echo: {
+					'0%': {
+						opacity: '0.5',
+						transform: 'scale(1)'
+					},
+					'14%': {
+						opacity: '0.4',
+						transform: 'scale(0.8)'
+					},
+					'21%': {
+						opacity: '0.4',
+						transform: 'scale(1.1)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'scale(1.5)'
+					}
+				}
 			},
 			boxShadow: {
 				'accordion': '0 0 1rem #0B7DD0, inset 0 0 2rem #0B7DD0',
@@ -81,6 +116,8 @@ const config: Config = {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'hideIn': 'hideIn 3s ease-in-out infinite backwards',
+				'beat': 'beat 2s linear infinite',
+				'echo': 'echo 2s linear infinite'
 			},
 			transitionDuration: {
 				'2000': '2000ms',

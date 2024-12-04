@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Title, Section, Vectors, Button } from "@/shared/components";
+import { Container, Title, Section, Vectors, Button, VectorsStar } from "@/shared/components";
 import useFormState from '@/store/useFormState';
 import { cn } from "@/shared/lib";
 
@@ -10,7 +10,9 @@ export const VectorSection = () => {
     return (
         <Section>
             <Container>
-                <Title>
+                <Title
+                    className="mb-[17.4rem] max-tablet:mb-[7.6rem]  "
+                >
                     <span
                         className={cn(
                             "relative",
@@ -20,6 +22,7 @@ export const VectorSection = () => {
                         )}
                     >Напрямки</span> навчання
                 </Title>
+                <VectorsStar />
                 <Vectors />
                 <div className={cn(
                     "flex justify-center w-full mt-[9.6rem]",
