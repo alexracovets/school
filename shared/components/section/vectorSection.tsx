@@ -11,7 +11,14 @@ export const VectorSection = () => {
         <Section>
             <Container>
                 <Title>
-                    Напрямки навчання
+                    <span
+                        className={cn(
+                            "relative",
+                            "before:content-[''] before:absolute before:z-[-1] before:left-0 before:bottom-[-.2rem] before:w-[27.053rem] before:h-[4.329rem] before:rounded-[50%] before:bg-[#2480C391]",
+                            "max-tablet:before:w-[17.5rem] max-tablet:before:h-[2.8rem] max-tablet:before:left-[-3.4rem] max-tablet:before:bottom-[-.9rem] max-tablet:before:bg-[#2480C357]",
+                            "max-mobile:before:w-[11.6rem] max-mobile:before:h-[2.4rem] max-mobile:before:left-[.2rem] max-mobile:before:bottom-[-1.05rem]"
+                        )}
+                    >Напрямки</span> навчання
                 </Title>
                 <Vectors />
                 <div className={cn(
