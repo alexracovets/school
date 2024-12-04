@@ -17,10 +17,32 @@ export const TutorsSection = () => {
                 </Title>
             </Container >
             <Container className={cn(
-                "relative bg-regal-gray py-[.8rem]",
+                "relative bg-regal-gray py-[.8rem] overflow-hidden",
                 "max-mobile:pt-0"
             )}>
-                <Image src={`/tutors/elipse.svg`} alt="tutor" fill className="object-contain" />
+                <Image
+                    src={`/tutors/elipse.svg`}
+                    alt="tutor"
+                    fill
+                    className={cn(
+                        "object-contain",
+                        "max-tablet:hidden"
+                    )}
+                />
+                <div className={cn(
+                    "absolute left-[50%] top-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]",
+                    "max-tablet:w-[113.6rem] max-tablet:h-[45.2rem]",
+                    "max-mobile:w-[72.6rem] max-mobile:h-[44.3rem]"
+                )}>
+                    <Image
+                        src={`/tutors/elipse.svg`}
+                        alt="tutor"
+                        fill
+                        className={cn(
+                            "object-contain"
+                        )}
+                    />
+                </div>
                 <div className="relative z-[1]">
                     <TutorsSlider />
                     <div

@@ -58,7 +58,6 @@ export const Header = () => {
         if (isOpen) {
             headroomRef.current.pin();
         }
-        console.log(headroomRef.current);
     }, [headroomRef, isOpen]);
     return (
         <header

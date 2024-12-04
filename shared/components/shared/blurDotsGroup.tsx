@@ -1,9 +1,7 @@
 "use client";
 
+import { BlurDot } from "@/shared/components";
 import { cn } from "@/shared/lib";
-import { BlurDot } from "./blurDot";
-
-
 
 export const BlurDotsGroup = () => {
 

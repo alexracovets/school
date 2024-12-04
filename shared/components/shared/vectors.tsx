@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/lib";
 
-import { Separator } from "@/shared/components";
+import { BlurRingsGroup, Separator } from "@/shared/components";
 
 const vectors = [
     {
@@ -12,7 +12,8 @@ const vectors = [
             "Ігрові методики для легкого засвоєння матеріалу.",
             "Розвиток логічного мислення та мовних навичок.",
             "Підтримка батьків у навчальному процесі."
-        ]
+        ],
+        className: "max-mobile:order-1"
     },
     {
         title: "Дорослі",
@@ -21,7 +22,8 @@ const vectors = [
             "Гнучкий графік занять.",
             "Практичне використання знань у реальних життєвих ситуаціях.",
             "Розвиток навичок для професійного зростання."
-        ]
+        ],
+        className: "max-mobile:order-3"
     },
     {
         title: "Середня школа",
@@ -30,7 +32,8 @@ const vectors = [
             "Поглиблене вивчення ключових предметів.",
             "Підготовка до самостійних робіт і контрольних.",
             "Підтримка в адаптації до шкільних вимог та програм."
-        ]
+        ],
+        className: "max-mobile:order-2"
     },
     {
         title: "Іспити",
@@ -39,7 +42,8 @@ const vectors = [
             "Розбір екзаменаційних завдань та стратегій.",
             "Інтенсивні тренування на базі реальних тестів минулих років.",
             "Підготовка за визначеними МОН програмами."
-        ]
+        ],
+        className: "max-mobile:order-4"
     }
 ]
 
@@ -52,6 +56,7 @@ export const Vectors = () => {
                 "max-tablet:gap-y-[4.5rem]"
             )}
         >
+            <BlurRingsGroup />
             <Separator
                 orientation="vertical"
                 className="absolute left-[50%] top-0 translate-x-[-50%] max-mobile:hidden"
@@ -63,7 +68,8 @@ export const Vectors = () => {
                             key={idx}
                             className={cn(
                                 "w-[50%]",
-                                "max-mobile:w-full max-mobile:px-[3rem]"
+                                "max-mobile:w-full max-mobile:px-[3rem]",
+                                item.className
                             )}
                         >
                             <div

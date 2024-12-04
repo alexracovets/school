@@ -27,7 +27,7 @@ export const BlurDot = ({ className }: BlurDotType) => {
     return (
         <div
             className={cn(
-                "absolute z-[-1] rounded-[50%] transition ease-linear duration-2000",
+                "absolute z-[-1] rounded-[50%] transition ease-linear duration-2000 pointer-events-none",
                 className
             )}
             style={{
