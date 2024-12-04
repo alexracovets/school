@@ -18,7 +18,7 @@ export const BlurDot = ({ position, size, blur, color }: BlurDotType) => {
     }
 
     const updatePositions = () => {
-        setTranslate({ x: getRandom(70), y: getRandom(50) });
+        setTranslate({ x: getRandom(50), y: getRandom(50) });
     };
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export const BlurDot = ({ position, size, blur, color }: BlurDotType) => {
                 color
             )}
             style={{
-                transform: `translate(${translate.x}%, ${translate.y}%)`
+                transform: `translate(-${translate.x}%, ${translate.y}%)`
             }}
         />
     )

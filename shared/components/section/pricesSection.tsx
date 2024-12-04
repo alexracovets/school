@@ -8,7 +8,7 @@ export const PricesSection = () => {
     const setActiveForm = useFormState(state => state.setIsActive);
 
     return (
-        <Section>
+        <Section className="max-mobile:pt-[3.4rem] pb-0 max-tablet:pb-0 max-mobile:pb-0">
             <Container>
                 <Title>
                     Ціни
@@ -21,8 +21,9 @@ export const PricesSection = () => {
                 >
                     <Button
                         className={cn(
-                            "mt-[10rem] mb-[.7rem]",
-                            "max-tablet:mt-[3.888rem] max-tablet:mb-0"
+                            "mt-[10rem] mb-[5rem]",
+                            "max-tablet:mt-[3.888rem] max-tablet:mb-[3rem]",
+                            "max-mobile:mb-[3.7rem]"
                         )}
                         onClick={() => setActiveForm(true)}
                     >

@@ -11,11 +11,11 @@ export const CheckIsMobile: React.FC = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 540);
-            setIsTablet(window.innerWidth < 838);
+            setIsMobile(window.innerWidth <= 768);
+            setIsTablet(window.innerWidth <= 1030 && window.innerWidth > 768);
             setViewSize(window.innerWidth);
         };
-        
+
         handleResize();
         window.addEventListener('resize', handleResize);
 

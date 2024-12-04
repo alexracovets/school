@@ -10,6 +10,7 @@ export { Container } from './container';
 export { Questions } from './questions';
 export { Feedback } from './feedback';
 export { BlurRing } from './blurRing';
+export { RingDot } from './ringDot';
 export { BlurDot } from './blurDot';
 export { Section } from './section';
 export { Vectors } from './vectors';

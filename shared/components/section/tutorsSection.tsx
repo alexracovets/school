@@ -10,7 +10,7 @@ export const TutorsSection = () => {
     const setActiveForm = useFormState(state => state.setIsActive);
 
     return (
-        <Section>
+        <Section className="pb-0 max-tablet:pb-0 max-mobile:pb-0">
             <Container>
                 <Title>
                     Репетитори

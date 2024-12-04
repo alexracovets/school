@@ -58,7 +58,20 @@ const config: Config = {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				hideIn: {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(.9) translateX(50%)'
+					},
+					'10%': {
+						opacity: '1', 
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'scale(1.1) translateX(55%)'
+					},
+				},
 			},
 			boxShadow: {
 				'accordion': '0 0 1rem #0B7DD0, inset 0 0 2rem #0B7DD0',
@@ -66,10 +79,12 @@ const config: Config = {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'hideIn': 'hideIn 3s ease-in-out infinite backwards',
 			},
 			transitionDuration: {
 				'2000': '2000ms',
+				'3000': '3000ms',
 				'10000': '10000ms'
 			}
 		}
