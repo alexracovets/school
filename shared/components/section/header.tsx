@@ -71,9 +71,8 @@ export const Header = () => {
                 onUnfix={() => setIsPin(false)}
             >
                 <Container className={cn(
-                    "w-full transition ease-in max-w-full",
-                    isPin ? "bg-regal-white" : "bg-transparent",
-                    isOpen ? "bg-regal-white duration-0" : "duration-300"
+                    "w-full max-w-full transition ease-in duration-300",
+                    isPin || isOpen ? "bg-regal-white duration-0" : ""
                 )}
                 >
                     <div
