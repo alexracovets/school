@@ -71,7 +71,7 @@ export const AboutSlider = () => {
                 ))}
             </div>
             <Carousel setApi={setApi} opts={{ align: 'start', loop: true, dragFree: true, active: isSliderActive }}>
-                <CarouselContent>
+                <CarouselContent className="py-[1rem]">
                     {
                         slides.map((slide, idx) => {
                             return (
@@ -79,7 +79,8 @@ export const AboutSlider = () => {
                                     <div className={cn(
                                         "w-[30.353rem] h-[45.5rem] bg-regal-light-blue rounded-[2.5rem] overflow-hidden px-[1.54rem] mx-auto select-none",
                                         "max-tablet:w-[17.4rem] max-tablet:h-[26.01rem] max-tablet:px-[.86rem] max-tablet:rounded-[1.433rem]",
-                                        "max-mobile:w-[16.335rem] max-mobile:h-[24.049rem] max-mobile:px-[.8rem]"
+                                        "max-mobile:w-[16.335rem] max-mobile:h-[24.049rem] max-mobile:px-[.8rem]",
+                                        "shadow_me"
                                     )}>
                                         <div className={cn(
                                             "relative w-[5.097rem] h-[5.097rem] mx-auto mt-[3.328rem] mb-[1.828rem]",
