@@ -20,6 +20,22 @@
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    position: fixed;
+    transition: all ease-in-out 300ms;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $base-purple;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 html {
@@ -37,7 +53,6 @@ html {
   body {
     overflow-x: hidden;
 
-
     &[data-scroll-locked] {
       margin-right: 0 !important;
     }
@@ -48,24 +63,6 @@ html {
       @media (max-width: $mobile) {
         position: relative;
       }
-    }
-  }
-
-  body,
-  textarea {
-    &::-webkit-scrollbar {
-      width: 3px;
-      position: absolute;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: #FFFFFF;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $base-purple;
-      border: none;
-      cursor: pointer;
     }
   }
 
