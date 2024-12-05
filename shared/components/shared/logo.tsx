@@ -7,6 +7,7 @@ export const Logo = () => {
 
         <h1 className={cn(
             "text-[3rem] text-regal-white text-center font-milks_casual flex flex-col justify-center items-center logo select-none",
+            "hover:scale-[1.1] transition ease-in-out duration-300 will-change-transform",
             "max-tablet:text-[2.5rem]",
             "max-mobile:text-[2rem]"
         )}>

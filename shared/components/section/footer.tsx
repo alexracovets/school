@@ -19,8 +19,7 @@ export const Footer = () => {
                         "max-mobile:flex-col max-mobile:justify-start max-mobile:gap-y-[3.5rem]"
                     )}
                 >
-                    <Link
-                        href="/"
+                    <div
                         className={cn(
                             "flex flex-col items-center",
                             "max-mobile:items-start"
@@ -35,18 +34,19 @@ export const Footer = () => {
                         >
                             контакти
                         </p>
-                        <p
+                        <Link
+                            href="/"
                             className={cn(
                                 "text-[4rem] font-sawarabi",
                                 "max-tablet:text-[2rem]",
-                                "max-mobile:text-[2rem]"
+                                "max-mobile:text-[2rem]",
+                                "hover:scale-[1.1] transition ease-in-out duration-300 will-change-transform"
                             )}
                         >
                             +380 68 039 44 75
-                        </p>
-                    </Link>
-                    <Link
-                        href="/"
+                        </Link>
+                    </div>
+                    <div
                         className={cn(
                             "flex flex-col items-center",
                             "max-mobile:items-start"
@@ -61,13 +61,18 @@ export const Footer = () => {
                         >
                             ми в соц. мережах
                         </p>
-                        <FaInstagram
-                            className={cn(
-                                "w-[9.138rem] h-[9.138rem]",
-                                "max-tablet:w-[5.825rem] max-tablet:h-[5.825rem]",
-                                "max-mobile:w-[3.79rem] max-mobile:h-[3.79rem]"
-                            )} />
-                    </Link>
+                        <Link
+                            href="/"
+                        >
+                            <FaInstagram
+                                className={cn(
+                                    "w-[9.138rem] h-[9.138rem]",
+                                    "max-tablet:w-[5.825rem] max-tablet:h-[5.825rem]",
+                                    "max-mobile:w-[3.79rem] max-mobile:h-[3.79rem]",
+                                    "hover:scale-[1.1] transition ease-in-out duration-300 will-change-transform"
+                                )} />
+                        </Link>
+                    </div>
                 </div>
             </Container>
         </footer>

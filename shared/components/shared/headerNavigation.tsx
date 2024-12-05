@@ -160,7 +160,7 @@ export const HeaderNavigation = forwardRef(({ closeHeadroom }: NavType, ref) => 
                                         closeHeadroom();
                                         setIsOpen(false);
                                     }}
-                                    className="p-[.5rem]"
+                                    className="block p-[.5rem] hover:scale-[1.1] transition ease-in-out duration-300 will-change-transform"
                                 >
                                     {item.name}
                                 </Link>
