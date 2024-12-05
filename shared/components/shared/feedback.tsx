@@ -1,6 +1,9 @@
 "use client";
 
+import { FeedBackSlider } from "@/shared/components";
 import { cn } from "@/shared/lib";
+
+import useResponsive from '@/store/useResponsive';
 
 const feedBackData = [
     {
@@ -31,56 +34,63 @@ const feedBackData = [
 ]
 
 export const Feedback = () => {
+    const isMobile = useResponsive(state => state.isMobile);
+
     return (
-        <div
-            className={cn(
-                "flex flex-wrap gap-x-[3rem] gap-y-[7.5rem]",
-                "max-tablet:gap-x-[1.6rem] max-tablet:gap-y-[4.369rem]",
-                "max-mobile:flex-col"
-            )}
-        >
-            {
-                feedBackData.map((item, idx) => {
-                    return (
-                        <div
-                            key={idx}
-                            className={cn(
-                                "w-[calc(50%-1.5rem)] p-[3.5rem] rounded-[5.4rem] border-[.35rem] border-regal-blue-second",
-                                "max-tablet:w-[calc(50%-.8rem)] max-tablet:p-[1.8rem] max-tablet:rounded-[3.1rem] max-tablet:border-[1px]",
-                                "max-mobile:w-full max-mobile:p-[1.877rem] max-mobile:rounded-[2.895rem]"
-                            )}
-                        >
-                            <div
-                                className={cn(
-                                    "text-[3.3rem] pb-[3rem] text-center font-kyiv_titling",
-                                    "max-tablet:text-[1.872rem] max-tablet:pb-[1.7rem]",
-                                    "max-mobile:text-[1.75rem] max-mobile:pb-[1.6rem]"
-                                )}
-                            >
-                                {item.title}
-                            </div>
-                            <div>
-                                {
-                                    item.comment.map((text, index) => {
-                                        return (
-                                            <p
-                                                key={index}
-                                                className={cn(
-                                                    "text-[2.4rem] font-sawarabi leading-[1.4721]",
-                                                    "max-tablet:text-[1.37rem]",
-                                                    "max-mobile:text-[1.287rem]"
-                                                )}
-                                            >
-                                                {text}
-                                            </p>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                    )
-                })
-            }
-        </div>
+        <>
+            {isMobile ?
+                <FeedBackSlider slides={feedBackData} /> :
+                <div
+                    className={cn(
+                        "flex flex-wrap gap-x-[3rem] gap-y-[7.5rem]",
+                        "max-tablet:gap-x-[1.6rem] max-tablet:gap-y-[4.369rem]",
+                        "max-mobile:flex-col"
+                    )}
+                >
+                    {
+                        feedBackData.map((item, idx) => {
+                            return (
+                                <div
+                                    key={idx}
+                                    className={cn(
+                                        "w-[calc(50%-1.5rem)] p-[3.5rem] rounded-[5.4rem] border-[.35rem] border-regal-blue-second",
+                                        "max-tablet:w-[calc(50%-.8rem)] max-tablet:p-[1.8rem] max-tablet:rounded-[3.1rem] max-tablet:border-[1px]",
+                                        "max-mobile:w-full max-mobile:p-[1.877rem] max-mobile:rounded-[2.895rem]"
+                                    )}
+                                >
+                                    <div
+                                        className={cn(
+                                            "text-[3.3rem] pb-[3rem] text-center font-kyiv_titling",
+                                            "max-tablet:text-[1.872rem] max-tablet:pb-[1.7rem]",
+                                            "max-mobile:text-[1.75rem] max-mobile:pb-[1.6rem]"
+                                        )}
+                                    >
+                                        {item.title}
+                                    </div>
+                                    <div>
+                                        {
+                                            item.comment.map((text, index) => {
+                                                return (
+                                                    <p
+                                                        key={index}
+                                                        className={cn(
+                                                            "text-[2.4rem] font-sawarabi leading-[1.4721]",
+                                                            "max-tablet:text-[1.37rem]",
+                                                            "max-mobile:text-[1.287rem]"
+                                                        )}
+                                                    >
+                                                        {text}
+                                                    </p>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            } 
+        </>
     )
 }

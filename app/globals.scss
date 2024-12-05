@@ -99,18 +99,18 @@ html {
         0 0 0.2rem #2480c3;
     }
   }
-}
 
-.school {
-  -webkit-text-stroke-color: #5799b3;
-  -webkit-text-stroke-width: 0.15rem;
+  .school {
+    -webkit-text-stroke-color: #5799b3;
+    -webkit-text-stroke-width: 0.15rem;
 
-  @media (max-width: $tablet) {
-    -webkit-text-stroke-width: .1rem;
-  }
+    @media (max-width: $tablet) {
+      -webkit-text-stroke-width: .1rem;
+    }
 
-  @media (max-width: $mobile) {
-    -webkit-text-stroke-width: 1.5px;
+    @media (max-width: $mobile) {
+      -webkit-text-stroke-width: .15rem;
+    }
   }
 }
 

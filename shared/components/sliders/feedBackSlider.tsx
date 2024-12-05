@@ -1,13 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Carousel, CarouselContent, CarouselApi, DotButton, useDotButton } from "@/shared/components";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi, DotButton, useDotButton } from "@/shared/components";
 
 import useResponsive from '@/store/useResponsive';
 import { cn } from "@/shared/lib";
 
-export const FeedBackSlider = () => {
+interface ItemType {
+    title: string;
+    comment: string[];
+}
+
+interface SlidesType {
+    slides: ItemType[]
+}
+
+export const FeedBackSlider: React.FC<SlidesType> = ({ slides }) => {
     const [api, setApi] = useState<CarouselApi>();
     const isMobile = useResponsive(state => state.isMobile);
     const [isSliderActive, setIsSliderActive] = useState(isMobile);
@@ -48,53 +57,33 @@ export const FeedBackSlider = () => {
             </div>
             <Carousel setApi={setApi} opts={{ align: 'start', loop: true, dragFree: true, active: isSliderActive }}>
                 <CarouselContent>
-                    {/* {
+                    {
                         slides.map((slide, idx) => {
                             return (
-                                <CarouselItem key={idx} className="basis-1">
-                                    <div className={cn(
-                                        "w-[30.353rem] h-[45.5rem] bg-regal-light-blue rounded-[2.5rem] overflow-hidden px-[1.54rem] mx-auto select-none",
-                                        "max-tablet:w-[17.4rem] max-tablet:h-[26.01rem] max-tablet:px-[.86rem] max-tablet:rounded-[1.433rem]",
-                                        "max-mobile:w-[16.335rem] max-mobile:h-[24.049rem] max-mobile:px-[.8rem]"
-                                    )}>
-                                        <div className={cn(
-                                            "relative w-[5.097rem] h-[5.097rem] mx-auto mt-[3.328rem] mb-[1.828rem]",
-                                            "max-tablet:w-[3.756rem] max-tablet:h-[3.756rem] max-tablet:mt-[1.5rem] max-tablet:mb-[.6rem]",
-                                            "max-mobile:w-[2.746rem] max-mobile:h-[2.746rem] max-mobile:mt-[1.7rem] max-mobile:mb-[1rem]"
-                                        )}>
-                                            <Image src={`/about/slider/ico/${slide.ico}.svg`} alt="slide" fill />
+                                <CarouselItem key={idx}>
+                                    <div className="p-[1.877rem] rounded-[2.895rem] border-[1px] border-regal-blue-second mb-[.2rem] h-full mx-[1rem]">
+                                        <div className="text-[1.75rem] pb-[1.6rem] text-center font-kyiv_titling">
+                                            {slide.title}
                                         </div>
-                                        <Separator />
-                                        <h3
-                                            className={cn(
-                                                "flex justify-center items-center text-[1.8rem] text-center font-kyiv_titling min-h-[7.677rem]",
-                                                "max-tablet:text-[1.032rem] max-tablet:min-h-[4.278rem]",
-                                                "max-mobile:text-[1.18rem] max-tablet:min-h-[4.565rem]"
-                                            )}
-                                            dangerouslySetInnerHTML={{ __html: slide.title }}
-                                        />
-                                        <Separator />
-                                        <div
-                                            className={cn(
-                                                "mt-[1.1rem]",
-                                                "max-tablet:mt-[.6rem]"
-                                            )}
-                                        >
-                                            <p
-                                                className={cn(
-                                                    "text-[2.2rem] font-sawarabi leading-[1.4718]",
-                                                    "max-tablet:text-[1.262rem]",
-                                                    "max-mobile:text-[1.18rem]"
-                                                )}
-                                            >
-                                                {slide.content}
-                                            </p>
+                                        <div>
+                                            {
+                                                slide.comment.map((text, index) => {
+                                                    return (
+                                                        <p
+                                                            key={index}
+                                                            className="text-[1.287rem] font-sawarabi leading-[1.4721]"
+                                                        >
+                                                            {text}
+                                                        </p>
+                                                    )
+                                                })
+                                            }
                                         </div>
                                     </div>
                                 </CarouselItem>
                             )
                         })
-                    } */}
+                    }
                 </CarouselContent>
             </Carousel>
         </div>
