@@ -29,9 +29,9 @@ export const Header = () => {
     const headroomRef = useRef<HeadroomInstance | null>(null);
 
     const headroomUnPin = useCallback(() => {
-        if (headroomRef.current) {
-            headroomRef.current?.unpin();
-        }
+        setTimeout(() => {
+            if (headroomRef.current) headroomRef.current?.unpin();
+        }, 1000);
     }, [headroomRef]);
 
     useEffect(() => {

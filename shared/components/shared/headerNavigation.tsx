@@ -68,7 +68,7 @@ export const HeaderNavigation = ({ closeHeadroom }: NavType) => {
                                         <Link
                                             href={item.path}
                                             onClick={() => {
-                                                setTimeout(() => closeHeadroom(), 1000);
+                                                closeHeadroom();
                                                 setIsOpen(false);
                                             }}
                                             passHref
