@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Fade as Hamburger } from 'hamburger-react';
 import Headroom from 'react-headroom';
+import Link from 'next/link';
 
 import { Button, Container, HeaderNavigation, Logo } from "@/shared/components";
 import useResponsive from '@/store/useResponsive';
@@ -27,6 +28,13 @@ export const Header = () => {
     const [isPin, setIsPin] = useState(false);
     const [burgerSize, setBurgerSize] = useState(0);
     const headroomRef = useRef<HeadroomInstance | null>(null);
+    const navRef = useRef<{ handleMouseLeave: () => void }>(null);
+
+    const handleMouseLeave = () => {
+        if (navRef.current) {
+            navRef.current.handleMouseLeave();
+        }
+    };
 
     const headroomUnPin = useCallback(() => {
         setTimeout(() => {
@@ -70,6 +78,7 @@ export const Header = () => {
     return (
         <header
             ref={headerRef}
+            onMouseLeave={handleMouseLeave}
             className="relative z-[2] w-full"
         >
             <Headroom
@@ -79,7 +88,7 @@ export const Header = () => {
                 onUnfix={() => setIsPin(false)}
             >
                 <Container className={cn(
-                    "w-full max-w-full transition ease-in duration-300",
+                    "w-full max-w-full transition ease-in duration-300 py-[1.5rem]",
                     isPin || isOpen ? "bg-regal-white duration-0" : ""
                 )}
                 >
@@ -88,8 +97,10 @@ export const Header = () => {
                             "flex justify-between items-center relative z-[50] w-full"
                         )}
                     >
-                        <Logo />
-                        <HeaderNavigation closeHeadroom={headroomUnPin} />
+                        <Link href="/#aptly">
+                            <Logo />
+                        </Link>
+                        <HeaderNavigation ref={navRef} closeHeadroom={headroomUnPin} />
                         <div
                             className={cn(
                                 "flex justify-center items-center gap-x-[4rem]",

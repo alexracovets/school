@@ -16,7 +16,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				kyiv_titling: ["var(--font-kyiv-type-titling)"],
-				sawarabi: ["var(--font-sawarabi)"]
+				sawarabi: ["var(--font-sawarabi)"],
+				milks_casual: ["var(--font-milks_casual)"]
 			},
 			colors: {
 				'regal-black': '#000000',
