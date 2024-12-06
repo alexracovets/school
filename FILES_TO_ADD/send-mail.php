@@ -30,16 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'alexracovets@gmail.com';
-    $mail->Password = 'pvnt xmpb hqih zpgd';
+    $mail->Username = 'aptlyschool@gmail.com';
+    $mail->Password = 'jhpj bluv byzr retp';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
     // Від кого лист 
-    $mail->setFrom('alexracovets@gmail.com', ' - Заявка');
+    $mail->setFrom('aptlyschool@gmail.com', ' - Заявка');
 
     // Кому лист
-    $mail->addAddress('alexracovets@gmail.com', ' APTLY');
+    $mail->addAddress('aptlyschool@gmail.com', ' APTLY');
 
     // Тема листа
     $mail->Subject = $formName;
