@@ -51,15 +51,13 @@ html {
   }
 
   body {
-    overflow-x: hidden;
+    overflow-y: visible !important;
 
     &[data-scroll-locked] {
       margin-right: 0 !important;
     }
 
     main {
-      overflow: hidden;
-
       @media (max-width: $mobile) {
         position: relative;
       }

@@ -3,9 +3,9 @@
 import { cn } from "@/shared/lib";
 import { InputFormType } from "@/shared/types";
 import { RadioGroup, RadioGroupItem, Label } from "@/shared/components";
+import { Controller } from "react-hook-form";
 
-export const RadioForm = ({ name, title, options = [], id, register }: InputFormType) => {
-
+export const RadioForm = ({ name, title, options = [], id, control, validation, error }: InputFormType) => {
     return (
         <>
             <Label
@@ -18,33 +18,41 @@ export const RadioForm = ({ name, title, options = [], id, register }: InputForm
             >
                 {title}
             </Label>
-            <RadioGroup
-                className={cn(
-                    "flex flex-col gap-y-[2rem]",
-                    "max-mobile:gap-y-[1rem]"
+            <Controller
+                name={name}
+                control={control}
+                rules={validation}
+                render={({ field }) => (
+                    <RadioGroup
+                
+                        onValueChange={field.onChange} // Оновлення стану
+                        className={cn(
+                            "flex flex-col gap-y-[2rem]",
+                            "max-mobile:gap-y-[1rem]"
+                        )}
+                    >
+                        {options.map((option, idx) => (
+                            <div key={idx} className="flex items-center gap-x-[1rem]">
+                                <RadioGroupItem
+                                    id={`option-${id}-${idx}`}
+                                    value={option.name} // Значення елемента
+                                />
+                                <Label
+                                    htmlFor={`option-${id}-${idx}`}
+                                    className={cn(
+                                        "text-[1.8rem] font-kyiv_titling",
+                                        "max-tablet:text-[2rem]",
+                                        "max-mobile:text-[1.4rem]"
+                                    )}
+                                >
+                                    {option.label}
+                                </Label>
+                            </div>
+                        ))}
+                    </RadioGroup>
                 )}
-            >
-                {options.map((option, idx) => (
-                    <div key={idx} className="flex items-center gap-x-[1rem]">
-                        <RadioGroupItem
-                            id={`option-${id}-${idx}`}
-                            value={option.name}
-                            {...register(name)}
-                        />
-                        <Label
-                            htmlFor={`option-${id}-${idx}`}
-                            className={cn(
-                                "text-[1.8rem] font-kyiv_titling",
-                                "max-tablet:text-[2rem]",
-                                "max-mobile:text-[1.4rem]"
-                            )}
-                        >
-                            {option.label}
-                        </Label>
-                    </div>
-                ))}
-            </RadioGroup>
+            />
+            {error && <span className="text-red-500 text-[1.2rem]">{error.message}</span>}
         </>
-
-    )
-}
+    );
+};

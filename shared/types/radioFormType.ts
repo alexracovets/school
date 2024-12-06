@@ -6,4 +6,5 @@ export type RadioFormType = {
     title: string;
     name: keyof FormType;
     values: Array<{ name: string; label: string }>;
+    error?: string;
 }

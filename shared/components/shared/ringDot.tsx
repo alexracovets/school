@@ -1,8 +1,6 @@
 "use client";
 
 import { cn } from "@/shared/lib";
-import { useEffect, useState } from "react";
-
 
 export const RingDot = () => {
 
@@ -17,9 +15,7 @@ export const RingDot = () => {
         )}>
             <div className={cn(
                 "w-[60%] h-[60%] rounded-[50%] border-[#2480C3] border-[.2rem] animate-ping duration-3000 max-mobile:border-[.1rem]",
-            )}>
-
-            </div>
+            )} />
         </div>
     )
 }

@@ -63,6 +63,7 @@ export const DotButton: React.FC<DotButtonProps> = (props) => {
                 selected ? "bg-[#AEAAAA] scale-[1.05]" : "bg-[#D9D9D9]"
             )}
         >
+            <span className='hidden'>.</span>
             {children}
         </button>
     )
