@@ -15,19 +15,20 @@ export const FormPopUp = () => {
     const [isFirstView, setIsFirstView] = useState(true);
 
     const { register, handleSubmit, trigger, reset, control, formState: { errors, isValid } } = useForm<FormType>({
-        mode: "onBlur",
+        mode: "onChange",
         defaultValues: {
             userName: "",
             userPhone: "",
             userComment: "",
-            useConnect: ""
+            userConnect: "",
+            formName: "Замовлення зі школи Aptly"
         }
     });
 
     const radioOptions: Array<RadioFormType> = [
         {
             title: "Як з вами зв`язатися?",
-            name: "useConnect",
+            name: "userConnect",
             values: [
                 {
                     name: "Телефон",
@@ -41,16 +42,29 @@ export const FormPopUp = () => {
         },
     ];
 
-    const submit: SubmitHandler<FormType> = data => {
-        console.log(data);
+    const submit: SubmitHandler<FormType> = async (data) => {
+        const response = await fetch('/send-mail.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
         reset();
         setIsFirstView(true);
+        if (response.ok) {
+            console.log("Форма відправлена");
+        } else {
+            console.log(data);
+        }
     }
+
     const handleInputChange = async () => {
         if (isFirstView) {
             setIsFirstView(false);
+            await trigger();
         }
-        await trigger(); // Запускає валідацію полів після першої взаємодії
+
     };
 
     return (
