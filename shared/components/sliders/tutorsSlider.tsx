@@ -49,7 +49,7 @@ const tutors = [
     {
         image: '4',
         name: 'Ангеліна',
-        rate: 'топ',
+        rate: false,
         profile: [
             "англійська мова"
         ],
@@ -58,7 +58,7 @@ const tutors = [
     {
         image: '5',
         name: 'Дмитро',
-        rate: 'топ',
+        rate: false,
         profile: [
             "англійська мова"
         ],
@@ -67,7 +67,7 @@ const tutors = [
     {
         image: '6',
         name: 'Тетяна',
-        rate: 'топ',
+        rate: false,
         profile: [
             "українська мова"
         ],
@@ -166,22 +166,27 @@ export const TutorsSlider = () => {
                                         >
                                             {item.name}
                                         </p>
-                                        <p
-                                            className={cn(
-                                                "relative uppercase text-[1.8rem] text-regal-dark-blue-second font-kyiv_titling",
-                                                "max-tablet:text-[1.031rem]"
-                                            )}
-                                        >
-                                            <span className="relative z-[1]">
-                                                {item.rate}
-                                            </span>
-                                            <span className={cn(
-                                                "text-[1.85rem] absolute left-0 top-0 text-stroke z-[0] translate-x-[-.03rem] translate-y-[-0.1rem]",
-                                                "max-tablet:text-[1.031rem] max-tablet:translate-y-0 max-tablet:translate-x-0"
-                                            )}>
-                                                {item.rate}
-                                            </span>
-                                        </p>
+                                        {item.rate
+                                            ?
+                                            <p
+                                                className={cn(
+                                                    "relative uppercase text-[1.8rem] text-regal-dark-blue-second font-kyiv_titling",
+                                                    "max-tablet:text-[1.031rem]"
+                                                )}
+                                            >
+                                                <span className="relative z-[1]">
+                                                    {item.rate}
+                                                </span>
+                                                <span className={cn(
+                                                    "text-[1.85rem] absolute left-0 top-0 text-stroke z-[0] translate-x-[-.03rem] translate-y-[-0.1rem]",
+                                                    "max-tablet:text-[1.031rem] max-tablet:translate-y-0 max-tablet:translate-x-0"
+                                                )}>
+                                                    {item.rate}
+                                                </span>
+                                            </p>
+                                            :
+                                            null
+                                        }
                                         <p
                                             className={cn(
                                                 "flex flex-col justify-center items-center text-[2.589rem] leading-[1.472] font-sawarabi",
